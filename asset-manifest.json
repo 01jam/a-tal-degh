@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/a-tal-degh/static/css/main.073c9b0a.css",
+    "main.js": "/a-tal-degh/static/js/main.7e660694.js",
+    "static/js/787.11808a03.chunk.js": "/a-tal-degh/static/js/787.11808a03.chunk.js",
+    "static/media/logo.svg": "/a-tal-degh/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/a-tal-degh/index.html",
+    "main.073c9b0a.css.map": "/a-tal-degh/static/css/main.073c9b0a.css.map",
+    "main.7e660694.js.map": "/a-tal-degh/static/js/main.7e660694.js.map",
+    "787.11808a03.chunk.js.map": "/a-tal-degh/static/js/787.11808a03.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.7e660694.js"
+  ]
+}
