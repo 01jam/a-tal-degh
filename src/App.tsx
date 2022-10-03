@@ -7,6 +7,7 @@ import useSWR from "swr";
 import axios from "axios";
 import { typo } from "./styles";
 import { ConditionalIf } from "./components/conditionalIf";
+import { Navigation } from "./components/navigation";
 
 function App() {
   const { data: specialties } = useSWR("specialties", (resource: string) =>
@@ -98,15 +99,19 @@ function App() {
             </p>
 
             <div className={styles.grid}>
-              {specialties.map((specialty: any, index: number) => (
+              {specialties.map((record: any, index: number) => (
                 <ConditionalIf
                   key={index}
-                  href={specialty.link}
+                  href={record.link}
                   target="_blank"
                   className={styles.block}
                 >
+                  <div className={styles.caption}>
+                    <p>{record.title}</p>
+                    <p>📍</p>
+                  </div>
                   <img
-                    src={`${process.env.REACT_APP_GITHUB_RAWCONTENT}${specialty.img}`}
+                    src={`${process.env.REACT_APP_GITHUB_RAWCONTENT}${record.img}`}
                   />
                 </ConditionalIf>
               ))}
@@ -311,15 +316,19 @@ function App() {
             <p className={typo.medium}>Cosa vedere se si è di passaggio</p>
 
             <div className={styles.grid}>
-              {visit.map((specialty: any, index: number) => (
+              {visit.map((record: any, index: number) => (
                 <ConditionalIf
                   key={index}
-                  href={specialty.link}
+                  href={record.link}
                   target="_blank"
                   className={styles.block}
                 >
+                  <div className={styles.caption}>
+                    <p>{record.title}</p>
+                    <p>📍</p>
+                  </div>
                   <img
-                    src={`${process.env.REACT_APP_GITHUB_RAWCONTENT}${specialty.img}`}
+                    src={`${process.env.REACT_APP_GITHUB_RAWCONTENT}${record.img}`}
                   />
                 </ConditionalIf>
               ))}
@@ -339,15 +348,19 @@ function App() {
             </p>
 
             <div className={styles.grid}>
-              {festival.map((specialty: any, index: number) => (
+              {festival.map((record: any, index: number) => (
                 <ConditionalIf
                   key={index}
-                  href={specialty.link}
+                  href={record.link}
                   target="_blank"
                   className={styles.block}
                 >
+                  <div className={styles.caption}>
+                    <p>{record.title}</p>
+                    <p>📍</p>
+                  </div>
                   <img
-                    src={`${process.env.REACT_APP_GITHUB_RAWCONTENT}${specialty.img}`}
+                    src={`${process.env.REACT_APP_GITHUB_RAWCONTENT}${record.img}`}
                   />
                 </ConditionalIf>
               ))}
@@ -356,36 +369,7 @@ function App() {
         </Section>
       )}
 
-      <nav className={styles.nav}>
-        <div className={styles.row}>
-          <a href={"#specialties"} className={styles.link}>
-            Specialties 👑
-          </a>
-          <a href={"#breakfast"} className={styles.link}>
-            Appena svegli ☕️
-          </a>
-          <a href={"#lunch"} className={styles.link}>
-            Trattorie 🍖
-          </a>
-          <a href={"#stop"} className={styles.link}>
-            Pranzo al volo 🏎
-          </a>
-          <a href={"#drink"} className={styles.link}>
-            Bere e aperitivi 🍹
-          </a>
-          <a href={"#outside"} className={styles.link}>
-            Cena fuori città 🎒
-          </a>
-        </div>
-        <div className={styles.row}>
-          <a href={"#visit"} className={styles.link}>
-            Cosa vedere 👀
-          </a>
-          <a href={"#festival"} className={styles.link}>
-            Festival 🎤
-          </a>
-        </div>
-      </nav>
+      <Navigation />
     </main>
   );
 }

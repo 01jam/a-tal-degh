@@ -2,6 +2,7 @@
   --black: #1f1f1f;
   --dark-blue: #2a2a9c;
   --blue: #3549ff;
+  --gray: rgb(234, 234, 234);
   --white: rgb(255, 255, 255);
 }
 
@@ -77,8 +78,8 @@ table {
   border-collapse: separate;
 
   a {
-    text-decoration: underline;
     cursor: pointer;
+    border-bottom: 1px solid var(--white);
   }
 
   tr,

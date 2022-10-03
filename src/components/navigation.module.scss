@@ -1,0 +1,36 @@
+.nav {
+  position: fixed;
+  bottom: 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.75rem;
+  transform: translateY(0%);
+  transition: transform 0.25s ease-out;
+  width: 100%;
+
+  &--is-hidden {
+    transform: translateY(100%);
+  }
+
+  .row {
+    display: flex;
+    row-gap: 0.5em;
+    column-gap: 0.5em;
+    flex-wrap: wrap;
+
+    .link {
+      background: var(--white);
+      color: var(--black);
+      padding: 0.5em;
+      border-radius: 0.5em;
+      transition: transform 0.25s ease-out;
+
+      @media (hover: hover) {
+        &:hover {
+          transform: translateY(-0.25em);
+        }
+      }
+    }
+  }
+}
