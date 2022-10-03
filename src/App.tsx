@@ -83,8 +83,11 @@ function App() {
 					<h3>
 						Use the ⚠️ button to report something suspect about a record – such
 						as wrong opening hours, bad experience, expensive bill, wrong info –
-						it will be revised and updated ASAP. Sorry for pixelated photos but
-						I don't have the copyright yet.
+						it will be revised and updated ASAP.
+					</h3>
+					<h3>
+						Sorry for pixelated photos but I don't own the copyright and you
+						don't want spoilers.
 					</h3>
 				</Block>
 			</Section>
@@ -333,7 +336,7 @@ function App() {
 			{!!festival?.length && (
 				<Section id={"festival"}>
 					<Block>
-						<h2>Ou, vieni dai</h2>
+						<h2>Festival ed eventi</h2>
 
 						<p className={typo.medium}>
 							Non è Milano, ma un paio di festival ci sono
