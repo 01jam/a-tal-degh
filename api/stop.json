@@ -1,12 +1,12 @@
 [
   {
-    "name": "Salumeria con cucina",
+    "name": "📍 Salumeria con cucina",
     "specialty": "Scegli tra qualunque tipo di cibo",
     "notes": "Occhio al vino!",
     "link": "https://www.google.com/maps/place/Salumeria+con+cucina/@44.6473678,10.9226053,15z/data=!4m2!3m1!1s0x0:0x31a78bbf26ec3c4e?sa=X&ved=2ahUKEwitiOjoqMP6AhWLRfEDHQFKDlgQ_BJ6BAh3EAU"
   },
   {
-    "name": "pizzALTaglio",
+    "name": "📍 pizzALTaglio",
     "specialty": null,
     "notes": "Per la fame improvvisa",
     "link": "https://www.google.com/maps/place/pizzALTaglio/@44.6464697,10.9271085,15z/data=!4m2!3m1!1s0x0:0x15ed5e9220b8ff03?sa=X&ved=2ahUKEwifh5L7qMP6AhXQXfEDHRvTDgUQ_BJ6BAhhEAU"
