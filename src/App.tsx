@@ -9,14 +9,28 @@ import { typo } from "./styles";
 import { ConditionalIf } from "./components/conditionalIf";
 
 function App() {
-  const { data: specialties, error } = useSWR(
-    "specialties",
-    (resource: string) =>
-      axios
-        .get<any[]>(
-          `https://raw.githubusercontent.com/01jam/a-tal-degh/main/api/${resource}.json`
-        )
-        .then(({ data }) => data)
+  const { data: specialties } = useSWR("specialties", (resource: string) =>
+    axios
+      .get<any[]>(
+        `https://raw.githubusercontent.com/01jam/a-tal-degh/main/api/${resource}.json`
+      )
+      .then(({ data }) => data)
+  );
+
+  const { data: breakfast } = useSWR("breakfast", (resource: string) =>
+    axios
+      .get<any[]>(
+        `https://raw.githubusercontent.com/01jam/a-tal-degh/main/api/${resource}.json`
+      )
+      .then(({ data }) => data)
+  );
+
+  const { data: lunch } = useSWR("lunch", (resource: string) =>
+    axios
+      .get<any[]>(
+        `https://raw.githubusercontent.com/01jam/a-tal-degh/main/api/${resource}.json`
+      )
+      .then(({ data }) => data)
   );
 
   return (
@@ -89,14 +103,14 @@ function App() {
             </h4>,
             null,
           ]}
-          body={[
-            [
-              <Fragment>Caffè Del Collegio</Fragment>,
-              <Fragment>Gnocco Fritto col Crudo</Fragment>,
-              <Fragment>Rimane comunque un classico</Fragment>,
+          body={
+            breakfast?.map((record) => [
+              <Fragment>{record.name}</Fragment>,
+              <Fragment>{record.specialty}</Fragment>,
+              <Fragment>{record.notes}</Fragment>,
               <Fragment>📍</Fragment>,
-            ],
-          ]}
+            ]) || []
+          }
         />
       </Section>
 

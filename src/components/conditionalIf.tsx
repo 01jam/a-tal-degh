@@ -10,6 +10,6 @@ const ConditionalIf: FC<PropsWithChildren<DefaultProps>> = ({
   href,
   children,
   ...rest
-}) => (href ? <a {...rest}>{children}</a> : <>{children}</>);
+}) => (href ? <a {...rest}>{children}</a> : <a {...rest}>{children}</a>);
 
 export { ConditionalIf };

@@ -6,7 +6,7 @@ const Table: FC<{
   body: (JSX.Element | null)[][];
 }> = ({ head, body }) => {
   return (
-    <table>
+    <table className={styles.container}>
       {head && (
         <thead>
           <tr>
