@@ -6,6 +6,7 @@ import styles from "./app.module.scss";
 import useSWR from "swr";
 import axios from "axios";
 import { typo } from "./styles";
+import { ConditionalIf } from "./components/conditionalIf";
 
 function App() {
   const { data: specialties, error } = useSWR(
@@ -44,7 +45,7 @@ function App() {
 
             <div className={styles.grid}>
               {specialties.map((specialty: any, index: number) => (
-                <a
+                <ConditionalIf
                   key={index}
                   href={specialty.link}
                   target="_blank"
@@ -53,7 +54,7 @@ function App() {
                   <img
                     src={`${process.env.REACT_APP_GITHUB_RAWCONTENT}${specialty.img}`}
                   />
-                </a>
+                </ConditionalIf>
               ))}
             </div>
           </Block>

@@ -11,18 +11,18 @@
   },
   {
     "title": "Erbazzone",
-    "img": "/content/erbbazzone.jpg",
+    "img": "/contents/erbbazzone.jpg",
     "link": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x477fef143b9209d3:0x348fa458d0ddcf03?source=g.page.share"
   },
   {
     "title": "Frittelle di Baccalà",
-    "img": "/content/frittelle.jpg",
+    "img": "/contents/frittelle.jpg",
     "link": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x477fef09866f9b3f:0x51feb487c4323cc3?source=g.page.share"
   },
   {
     "title": "Borlenghi",
     "img": "/contents/borlenghi.jpg",
-    "link": ""
+    "link": null
   },
   {
     "title": "Il tris di primi",
