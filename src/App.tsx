@@ -10,10 +10,12 @@ function App() {
   const { data: specialties, error } = useSWR("/api/user/123", (url: string) =>
     axios
       .get<any[]>(
-        "https://raw.githubusercontent.com/01jam/a-tal-degh/main/data/specialties.json"
+        "https://raw.githubusercontent.com/01jam/a-tal-degh/main/api/specialties.json"
       )
       .then(({ data }) => data)
   );
+
+  console.log(specialties);
 
   return (
     <main className="App">
@@ -33,7 +35,12 @@ function App() {
           </Block>
           <div className={styles.grid}>
             {specialties.map((specialty: any, index: number) => (
-              <a key={index} href={specialty.link} className={styles.block}>
+              <a
+                key={index}
+                href={specialty.link}
+                target="_blank"
+                className={styles.block}
+              >
                 <img src={specialty.img} />
               </a>
             ))}
