@@ -2,10 +2,8 @@ import { Fragment } from "react";
 import { Block } from "./components/block";
 import { Section } from "./components/section";
 import { Table } from "./components/table";
-import specialties from "./data/specialties.json";
+import specialties from "https://raw.githubusercontent.com/01jam/a-tal-degh/main/data/specialties.json";
 import styles from "./app.module.scss";
-
-console.log(specialties);
 
 function App() {
   return (
@@ -25,7 +23,7 @@ function App() {
             <h2>Specialità</h2>
           </Block>
           <div className={styles.grid}>
-            {specialties.map((specialty, index) => (
+            {specialties.map((specialty: any, index: number) => (
               <div key={index} className={styles.block}>
                 <img src={specialty.img} />
               </div>
