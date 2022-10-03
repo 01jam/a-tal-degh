@@ -1,0 +1,22 @@
+.container {
+  :first-child {
+    margin-top: 0;
+  }
+
+  :last-child {
+    margin-bottom: 0;
+  }
+
+  &:not(.bg) + & {
+    margin-top: 2rem;
+  }
+}
+
+.bg {
+  padding: 1rem 0;
+
+  &--black {
+    background-color: var(--black);
+    color: var(--white);
+  }
+}

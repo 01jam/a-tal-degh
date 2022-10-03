@@ -1,25 +1,74 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Fragment } from "react";
+import { Block } from "./components/block";
+import { Section } from "./components/section";
+import { Table } from "./components/table";
+import specialties from "./data/specialties.json";
+import styles from "./app.module.scss";
+
+console.log(specialties);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="App">
+      <Section bg="black">
+        <Block>
+          <h3>
+            Use the ⚠️ button to report something suspect about a record – such
+            as wrong opening hours, bad experience, expensive bill, wrong info –
+            it will be revised and updated
+          </h3>
+        </Block>
+      </Section>
+      {!!specialties?.length && (
+        <Section>
+          <Block>
+            <h2>Specialità</h2>
+          </Block>
+          <div className={styles.grid}>
+            {specialties.map((specialty, index) => (
+              <div key={index} className={styles.block}>
+                <img src={specialty.img} />
+              </div>
+            ))}
+          </div>
+        </Section>
+      )}
+      <Section>
+        <Block>
+          <h2>Appena svegli</h2>
+        </Block>
+        <Table
+          head={[
+            <h4>
+              <strong>
+                <mark>Nome</mark>
+              </strong>
+            </h4>,
+            <h4>
+              <strong>
+                <mark>Specialità</mark>
+              </strong>
+            </h4>,
+            <h4>
+              <strong>
+                <mark>Note</mark>
+              </strong>
+            </h4>,
+            null,
+          ]}
+          body={[
+            [
+              <Fragment>Caffè Del Collegio</Fragment>,
+              <Fragment>Gnocco Fritto col Crudo</Fragment>,
+              <Fragment>
+                Il gnocco fritto al mattino è il classico dei classici
+              </Fragment>,
+              <Fragment>📍</Fragment>,
+            ],
+          ]}
+        />
+      </Section>
+    </main>
   );
 }
 
