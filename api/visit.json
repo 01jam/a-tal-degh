@@ -1,17 +1,17 @@
 [
-  {
-    "title": "Duomo di Modena",
-    "img": "/contents/duomo.jpeg",
-    "link": "https://www.google.com/maps/place/Trattoria+Aldina/@44.6447691,10.9249297,15z/data=!4m2!3m1!1s0x0:0xe2c65becf7af57ff?sa=X&ved=2ahUKEwiDsYzhkMP6AhWpX_EDHaxDAVoQ_BJ6BAhqEAU"
-  },
-  {
-    "title": "Cimitero di San Cataldo",
-    "img": "/contents/san-cataldo.jpg",
-    "link": "https://www.google.com/maps/place/Trattoria+Aldina/@44.6447691,10.9249297,15z/data=!4m2!3m1!1s0x0:0xe2c65becf7af57ff?sa=X&ved=2ahUKEwiDsYzhkMP6AhWpX_EDHaxDAVoQ_BJ6BAhqEAU"
-  },
-  {
-    "title": "Free Walking Tour",
-    "img": "/contents/walk.jpg",
-    "link": "https://freewalkingtouritalia.com/products/free-walking-tour-modena"
-  }
+	{
+		"title": "Duomo di Modena",
+		"img": "/contents/pixel/duomo.png",
+		"link": "https://www.google.com/maps/place/Trattoria+Aldina/@44.6447691,10.9249297,15z/data=!4m2!3m1!1s0x0:0xe2c65becf7af57ff?sa=X&ved=2ahUKEwiDsYzhkMP6AhWpX_EDHaxDAVoQ_BJ6BAhqEAU"
+	},
+	{
+		"title": "Cimitero di San Cataldo",
+		"img": "/contents/pixel/san-cataldo.png",
+		"link": "https://www.google.com/maps/place/Trattoria+Aldina/@44.6447691,10.9249297,15z/data=!4m2!3m1!1s0x0:0xe2c65becf7af57ff?sa=X&ved=2ahUKEwiDsYzhkMP6AhWpX_EDHaxDAVoQ_BJ6BAhqEAU"
+	},
+	{
+		"title": "Free Walking Tour",
+		"img": "/contents/pixel/walk.png",
+		"link": "https://freewalkingtouritalia.com/products/free-walking-tour-modena"
+	}
 ]

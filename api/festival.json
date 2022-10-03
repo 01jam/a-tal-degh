@@ -1,22 +1,22 @@
 [
-  {
-    "title": "Festival della Filosofia",
-    "img": "/contents/filosofia.jpg",
-    "link": "https://www.festivalfilosofia.it/programma-completo"
-  },
-  {
-    "title": "DIG Festival",
-    "img": "/contents/dig.jpg",
-    "link": "https://dig-awards.org/"
-  },
-  {
-    "title": "Smart Life Festival",
-    "img": "/contents/sml.png",
-    "link": "https://smartlifefestival.it/"
-  },
-  {
-    "title": "Modena play",
-    "img": "/contents/play.jpg",
-    "link": "https://www.play-modena.it/"
-  }
+	{
+		"title": "Festival della Filosofia",
+		"img": "/contents/pixel/filosofia.png",
+		"link": "https://www.festivalfilosofia.it/programma-completo"
+	},
+	{
+		"title": "DIG Festival",
+		"img": "/contents/pixel/dig.png",
+		"link": "https://dig-awards.org/"
+	},
+	{
+		"title": "Smart Life Festival",
+		"img": "/contents/pixel/sml.png",
+		"link": "https://smartlifefestival.it/"
+	},
+	{
+		"title": "Modena play",
+		"img": "/contents/pixel/play.png",
+		"link": "https://www.play-modena.it/"
+	}
 ]
