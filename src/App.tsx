@@ -328,6 +328,34 @@ function App() {
         </Section>
       )}
 
+      {/* Festival */}
+      {!!festival?.length && (
+        <Section id={"visit"}>
+          <Block>
+            <h2>Ou, vieni dai</h2>
+
+            <p className={typo.medium}>
+              Non è Milano, ma un paio di festival ci sono
+            </p>
+
+            <div className={styles.grid}>
+              {festival.map((specialty: any, index: number) => (
+                <ConditionalIf
+                  key={index}
+                  href={specialty.link}
+                  target="_blank"
+                  className={styles.block}
+                >
+                  <img
+                    src={`${process.env.REACT_APP_GITHUB_RAWCONTENT}${specialty.img}`}
+                  />
+                </ConditionalIf>
+              ))}
+            </div>
+          </Block>
+        </Section>
+      )}
+
       <nav className={styles.nav}>
         <div className={styles.row}>
           <a href={"#specialties"} className={styles.link}>
@@ -352,6 +380,9 @@ function App() {
         <div className={styles.row}>
           <a href={"#visit"} className={styles.link}>
             Cosa vedere 👀
+          </a>
+          <a href={"#festival"} className={styles.link}>
+            Festival 🎤
           </a>
         </div>
       </nav>
