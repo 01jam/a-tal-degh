@@ -49,6 +49,14 @@ function App() {
       .then(({ data }) => data)
   );
 
+  const { data: outside } = useSWR("outside", (resource: string) =>
+    axios
+      .get<any[]>(
+        `https://raw.githubusercontent.com/01jam/a-tal-degh/main/api/${resource}.json`
+      )
+      .then(({ data }) => data)
+  );
+
   return (
     <main className="App">
       {/* Disclaimer */}
@@ -233,6 +241,41 @@ function App() {
         />
       </Section>
 
+      {/* Cena fuori modena */}
+      <Section id={"outside"}>
+        <Block>
+          <h2>Cena al fresco</h2>
+        </Block>
+        <Table
+          head={[
+            <h4>
+              <strong>
+                <mark>Nome</mark>
+              </strong>
+            </h4>,
+            <h4>
+              <strong>
+                <mark>Specialità</mark>
+              </strong>
+            </h4>,
+            <h4>
+              <strong>
+                <mark>Note</mark>
+              </strong>
+            </h4>,
+            null,
+          ]}
+          body={
+            outside?.map((record) => [
+              <Fragment>{record.name}</Fragment>,
+              <Fragment>{record.specialty}</Fragment>,
+              <Fragment>{record.notes}</Fragment>,
+              <Fragment>📍</Fragment>,
+            ]) || []
+          }
+        />
+      </Section>
+
       <nav className={styles.nav}>
         <a href={"#specialties"} className={styles.link}>
           Specialties 👑
@@ -248,6 +291,9 @@ function App() {
         </a>
         <a href={"#drink"} className={styles.link}>
           Bere e aperitivi 🍹
+        </a>
+        <a href={"#outside"} className={styles.link}>
+          Cena fuori città 🎒
         </a>
       </nav>
     </main>
