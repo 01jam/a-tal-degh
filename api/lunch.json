@@ -1,7 +1,17 @@
 [
   {
-    "name": "aaa",
-    "specialty": "aaa",
-    "notes": "aaa"
+    "name": "Zémian",
+    "specialty": "Addirittura un menù fisso tipico di tutto rispetto, ormai una rarità",
+    "notes": "Prenota gabiàn, anche 2 4 5 giorni prima"
+  },
+  {
+    "name": "Trattoria Aldina",
+    "specialty": "Lo stinco e tortellini sono tappa obbligata",
+    "notes": "LUN - VEN A PRANZO non prende prenotazioni, VEN - SAB A CENA devi prenotare"
+  },
+  {
+    "name": "Ermes",
+    "specialty": "T'è propria un Gabian",
+    "notes": "LUN - SAB SOLO PRANZO e non prende prenotazioni"
   }
 ]

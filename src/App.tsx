@@ -33,6 +33,14 @@ function App() {
       .then(({ data }) => data)
   );
 
+  const { data: stop } = useSWR("stop", (resource: string) =>
+    axios
+      .get<any[]>(
+        `https://raw.githubusercontent.com/01jam/a-tal-degh/main/api/${resource}.json`
+      )
+      .then(({ data }) => data)
+  );
+
   return (
     <main className="App">
       {/* Disclaimer */}
@@ -114,12 +122,92 @@ function App() {
         />
       </Section>
 
+      {/* Lunch */}
+      <Section id={"lunch"}>
+        <Block>
+          <h2>Trattorie</h2>
+
+          <p className={typo.medium}>
+            La regola generale? Se ha il menù fisso vai tranquill*
+          </p>
+        </Block>
+        <Table
+          head={[
+            <h4>
+              <strong>
+                <mark>Nome</mark>
+              </strong>
+            </h4>,
+            <h4>
+              <strong>
+                <mark>Specialità</mark>
+              </strong>
+            </h4>,
+            <h4>
+              <strong>
+                <mark>Note</mark>
+              </strong>
+            </h4>,
+            null,
+          ]}
+          body={
+            lunch?.map((record) => [
+              <Fragment>{record.name}</Fragment>,
+              <Fragment>{record.specialty}</Fragment>,
+              <Fragment>{record.notes}</Fragment>,
+              <Fragment>📍</Fragment>,
+            ]) || []
+          }
+        />
+      </Section>
+
+      {/* Snack */}
+      <Section id={"break"}>
+        <Block>
+          <h2>Pranzo al volo</h2>
+        </Block>
+        <Table
+          head={[
+            <h4>
+              <strong>
+                <mark>Nome</mark>
+              </strong>
+            </h4>,
+            <h4>
+              <strong>
+                <mark>Specialità</mark>
+              </strong>
+            </h4>,
+            <h4>
+              <strong>
+                <mark>Note</mark>
+              </strong>
+            </h4>,
+            null,
+          ]}
+          body={
+            stop?.map((record) => [
+              <Fragment>{record.name}</Fragment>,
+              <Fragment>{record.specialty}</Fragment>,
+              <Fragment>{record.notes}</Fragment>,
+              <Fragment>📍</Fragment>,
+            ]) || []
+          }
+        />
+      </Section>
+
       <nav className={styles.nav}>
         <a href={"#specialties"} className={styles.link}>
           Specialties 👑
         </a>
         <a href={"#breakfast"} className={styles.link}>
           Appena svegli ☕️
+        </a>
+        <a href={"#lunch"} className={styles.link}>
+          Trattorie 🍖
+        </a>
+        <a href={"#break"} className={styles.link}>
+          Pranzo al volo 🏎
         </a>
       </nav>
     </main>

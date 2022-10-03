@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Salumeria con cucina",
+    "specialty": "Scegli tra qualunque tipo di cibo",
+    "notes": "Occhio al vino!"
+  },
+  {
+    "name": "pizzALTaglio",
+    "specialty": null,
+    "notes": "Per la fame improvvisa"
+  }
+]
