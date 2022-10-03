@@ -1,11 +1,20 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { Block } from "./components/block";
 import { Section } from "./components/section";
 import { Table } from "./components/table";
-import specialties from "https://raw.githubusercontent.com/01jam/a-tal-degh/main/data/specialties.json";
 import styles from "./app.module.scss";
+import useSWR from "swr";
+import axios from "axios";
 
 function App() {
+  const { data: specialties, error } = useSWR("/api/user/123", (url: string) =>
+    axios
+      .get<any[]>(
+        "https://raw.githubusercontent.com/01jam/a-tal-degh/main/data/specialties.json"
+      )
+      .then(({ data }) => data)
+  );
+
   return (
     <main className="App">
       <Section bg="black">
@@ -24,9 +33,9 @@ function App() {
           </Block>
           <div className={styles.grid}>
             {specialties.map((specialty: any, index: number) => (
-              <div key={index} className={styles.block}>
+              <a key={index} href={specialty.link} className={styles.block}>
                 <img src={specialty.img} />
-              </div>
+              </a>
             ))}
           </div>
         </Section>
