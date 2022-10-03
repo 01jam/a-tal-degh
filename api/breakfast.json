@@ -3,5 +3,15 @@
     "name": "Caffè Del Collegio",
     "specialty": "Gnocco Fritto col Crudo",
     "notes": "Il gnocco fritto al mattino è il classico dei classici"
+  },
+  {
+    "name": "Forno San Giorgio AKA Dolce Charlotte",
+    "specialty": "Erbazzone",
+    "notes": "Li vendono pure interi per 20€ da portare via come una torta"
+  },
+  {
+    "name": "Mercato Albinelli",
+    "specialty": "Frittelle di baccalà non sembrano autoctone, eppure...",
+    "notes": "Da visitare la mattina presto, è un mercato mica un ristorante"
   }
 ]

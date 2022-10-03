@@ -64,6 +64,10 @@ function App() {
       <Section id={"breakfast"}>
         <Block>
           <h2>Appena svegli</h2>
+
+          <p className={typo.medium}>
+            Sì, il gnocco fritto si mangia a colazione
+          </p>
         </Block>
         <Table
           head={[
@@ -88,9 +92,7 @@ function App() {
             [
               <Fragment>Caffè Del Collegio</Fragment>,
               <Fragment>Gnocco Fritto col Crudo</Fragment>,
-              <Fragment>
-                Il gnocco fritto al mattino è il classico dei classici
-              </Fragment>,
+              <Fragment>Rimane comunque un classico</Fragment>,
               <Fragment>📍</Fragment>,
             ],
           ]}
