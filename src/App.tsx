@@ -50,7 +50,9 @@ function App() {
                   target="_blank"
                   className={styles.block}
                 >
-                  <img src={specialty.img} />
+                  <img
+                    src={`${process.env.REACT_APP_GITHUB_RAWCONTENT}${specialty.img}`}
+                  />
                 </a>
               ))}
             </div>

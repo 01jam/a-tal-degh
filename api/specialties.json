@@ -2,7 +2,7 @@
   {
     "title": "Tortellini",
     "img": "/contents/tortellini.jpg",
-    "link": "https://www.google.com/maps/place/Trattoria+Zanichelli/@44.497676,10.8737897,15z/data=!4m5!3m4!1s0x0:0x7bd1cce8710af19c!8m2!3d44.4976623!4d10.873818"
+    "link": "https://www.google.com/maps/place/Trattoria+Aldina/@44.6447691,10.9249297,15z/data=!4m2!3m1!1s0x0:0xe2c65becf7af57ff?sa=X&ved=2ahUKEwiDsYzhkMP6AhWpX_EDHaxDAVoQ_BJ6BAhqEAU"
   },
   {
     "title": "Gnocco fritto",
@@ -11,22 +11,22 @@
   },
   {
     "title": "Erbazzone",
-    "img": "/erbbazzone.jpg",
-    "link": "https://www.google.com/maps/place/Trattoria+Zanichelli/@44.497676,10.8737897,15z/data=!4m5!3m4!1s0x0:0x7bd1cce8710af19c!8m2!3d44.4976623!4d10.873818"
+    "img": "/content/erbbazzone.jpg",
+    "link": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x477fef143b9209d3:0x348fa458d0ddcf03?source=g.page.share"
   },
   {
     "title": "Frittelle di Baccalà",
-    "img": "/frittelle.jpg",
-    "link": "https://www.google.com/maps/place/Trattoria+Zanichelli/@44.497676,10.8737897,15z/data=!4m5!3m4!1s0x0:0x7bd1cce8710af19c!8m2!3d44.4976623!4d10.873818"
+    "img": "/content/frittelle.jpg",
+    "link": "https://www.google.com/maps/place//data=!4m2!3m1!1s0x477fef09866f9b3f:0x51feb487c4323cc3?source=g.page.share"
   },
   {
     "title": "Borlenghi",
     "img": "/contents/borlenghi.jpg",
-    "link": "https://www.google.com/maps/place/Trattoria+Zanichelli/@44.497676,10.8737897,15z/data=!4m5!3m4!1s0x0:0x7bd1cce8710af19c!8m2!3d44.4976623!4d10.873818"
+    "link": ""
   },
   {
     "title": "Il tris di primi",
     "img": "/contents/primi.jpg",
-    "link": "https://www.google.com/maps/place/Trattoria+Zanichelli/@44.497676,10.8737897,15z/data=!4m5!3m4!1s0x0:0x7bd1cce8710af19c!8m2!3d44.4976623!4d10.873818"
+    "link": "https://www.google.com/maps/place/Agriturismo+Il+Pastore/@44.4092774,10.8990594,15z/data=!4m2!3m1!1s0x0:0xc50dcdafdbc8830d?sa=X&ved=2ahUKEwjru8ySkcP6AhVHSvEDHfSAC6oQ_BJ6BAh6EAU"
   }
 ]
