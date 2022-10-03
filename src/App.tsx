@@ -41,6 +41,14 @@ function App() {
       .then(({ data }) => data)
   );
 
+  const { data: drink } = useSWR("drink", (resource: string) =>
+    axios
+      .get<any[]>(
+        `https://raw.githubusercontent.com/01jam/a-tal-degh/main/api/${resource}.json`
+      )
+      .then(({ data }) => data)
+  );
+
   return (
     <main className="App">
       {/* Disclaimer */}
@@ -162,7 +170,7 @@ function App() {
       </Section>
 
       {/* Snack */}
-      <Section id={"break"}>
+      <Section id={"stop"}>
         <Block>
           <h2>Pranzo al volo</h2>
         </Block>
@@ -196,6 +204,35 @@ function App() {
         />
       </Section>
 
+      {/* Bere e aperitivo */}
+      <Section id={"drink"}>
+        <Block>
+          <h2>Bere</h2>
+        </Block>
+        <Table
+          head={[
+            <h4>
+              <strong>
+                <mark>Nome</mark>
+              </strong>
+            </h4>,
+            <h4>
+              <strong>
+                <mark>Note</mark>
+              </strong>
+            </h4>,
+            null,
+          ]}
+          body={
+            drink?.map((record) => [
+              <Fragment>{record.name}</Fragment>,
+              <Fragment>{record.notes}</Fragment>,
+              <Fragment>📍</Fragment>,
+            ]) || []
+          }
+        />
+      </Section>
+
       <nav className={styles.nav}>
         <a href={"#specialties"} className={styles.link}>
           Specialties 👑
@@ -206,8 +243,11 @@ function App() {
         <a href={"#lunch"} className={styles.link}>
           Trattorie 🍖
         </a>
-        <a href={"#break"} className={styles.link}>
+        <a href={"#stop"} className={styles.link}>
           Pranzo al volo 🏎
+        </a>
+        <a href={"#drink"} className={styles.link}>
+          Bere e aperitivi 🍹
         </a>
       </nav>
     </main>
