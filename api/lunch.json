@@ -1,17 +1,20 @@
 [
   {
-    "name": "Zémian",
+    "name": "📍Zémian",
     "specialty": "Addirittura un menù fisso tipico di tutto rispetto, ormai una rarità",
-    "notes": "Prenota gabiàn, anche 2 4 5 giorni prima"
+    "notes": "Prenota gabiàn, anche 2 4 5 giorni prima",
+    "link": "https://www.google.com/maps/place/Zemi%C3%A0n+piccola+osteria/@44.6483652,10.9278207,15z/data=!4m2!3m1!1s0x0:0xe52b2e5ab7a99466?sa=X&ved=2ahUKEwikwNb1p8P6AhVQR_EDHSJPCiwQ_BJ6BAhtEAU"
   },
   {
-    "name": "Trattoria Aldina",
+    "name": "📍Trattoria Aldina",
     "specialty": "Lo stinco e tortellini sono tappa obbligata",
-    "notes": "LUN - VEN A PRANZO non prende prenotazioni, VEN - SAB A CENA devi prenotare"
+    "notes": "LUN - VEN A PRANZO non prende prenotazioni, VEN - SAB A CENA devi prenotare",
+    "link": "https://www.google.com/maps/place/Trattoria+Aldina/@44.6447691,10.9249297,15z/data=!4m5!3m4!1s0x0:0xe2c65becf7af57ff!8m2!3d44.6447318!4d10.9250179"
   },
   {
-    "name": "Ermes",
+    "name": "📍Ermes",
     "specialty": "T'è propria un Gabian",
-    "notes": "LUN - SAB SOLO PRANZO e non prende prenotazioni"
+    "notes": "LUN - SAB SOLO PRANZO e non prende prenotazioni",
+    "link": "https://www.google.com/maps/place/Osteria+Ermes/@44.649487,10.9253776,15z/data=!4m2!3m1!1s0x0:0xa844c200b147ae78?sa=X&ved=2ahUKEwievOKKqMP6AhUZQfEDHVbEBw0Q_BJ6BAhoEAU"
   }
 ]
