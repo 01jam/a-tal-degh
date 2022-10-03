@@ -34,18 +34,24 @@
 }
 
 .nav {
-  display: flex;
-  row-gap: 0.5em;
-  column-gap: 0.5em;
   flex-wrap: wrap;
   position: sticky;
   bottom: 0;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.75rem;
 
-  .link {
-    background: var(--white);
-    color: var(--black);
-    padding: 0.5em;
-    border-radius: 0.5em;
+  .row {
+    display: flex;
+    row-gap: 0.5em;
+    column-gap: 0.5em;
+
+    .link {
+      background: var(--white);
+      color: var(--black);
+      padding: 0.5em;
+      border-radius: 0.5em;
+    }
   }
 }

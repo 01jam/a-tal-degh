@@ -57,6 +57,14 @@ function App() {
       .then(({ data }) => data)
   );
 
+  const { data: visit } = useSWR("visit", (resource: string) =>
+    axios
+      .get<any[]>(
+        `https://raw.githubusercontent.com/01jam/a-tal-degh/main/api/${resource}.json`
+      )
+      .then(({ data }) => data)
+  );
+
   return (
     <main className="App">
       {/* Disclaimer */}
@@ -286,25 +294,58 @@ function App() {
         </Section>
       )}
 
+      {/* Places and activities */}
+      {!!visit?.length && (
+        <Section id={"visit"}>
+          <Block>
+            <h2>Una breve visita</h2>
+
+            <p className={typo.medium}>Cosa vedere se si è di passaggio</p>
+
+            <div className={styles.grid}>
+              {visit.map((specialty: any, index: number) => (
+                <ConditionalIf
+                  key={index}
+                  href={specialty.link}
+                  target="_blank"
+                  className={styles.block}
+                >
+                  <img
+                    src={`${process.env.REACT_APP_GITHUB_RAWCONTENT}${specialty.img}`}
+                  />
+                </ConditionalIf>
+              ))}
+            </div>
+          </Block>
+        </Section>
+      )}
+
       <nav className={styles.nav}>
-        <a href={"#specialties"} className={styles.link}>
-          Specialties 👑
-        </a>
-        <a href={"#breakfast"} className={styles.link}>
-          Appena svegli ☕️
-        </a>
-        <a href={"#lunch"} className={styles.link}>
-          Trattorie 🍖
-        </a>
-        <a href={"#stop"} className={styles.link}>
-          Pranzo al volo 🏎
-        </a>
-        <a href={"#drink"} className={styles.link}>
-          Bere e aperitivi 🍹
-        </a>
-        <a href={"#outside"} className={styles.link}>
-          Cena fuori città 🎒
-        </a>
+        <div className={styles.row}>
+          <a href={"#specialties"} className={styles.link}>
+            Specialties 👑
+          </a>
+          <a href={"#breakfast"} className={styles.link}>
+            Appena svegli ☕️
+          </a>
+          <a href={"#lunch"} className={styles.link}>
+            Trattorie 🍖
+          </a>
+          <a href={"#stop"} className={styles.link}>
+            Pranzo al volo 🏎
+          </a>
+          <a href={"#drink"} className={styles.link}>
+            Bere e aperitivi 🍹
+          </a>
+          <a href={"#outside"} className={styles.link}>
+            Cena fuori città 🎒
+          </a>
+        </div>
+        <div className={styles.row}>
+          <a href={"#visit"} className={styles.link}>
+            Cosa vedere 👀
+          </a>
+        </div>
       </nav>
     </main>
   );
