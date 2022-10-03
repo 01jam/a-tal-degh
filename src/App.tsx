@@ -145,7 +145,9 @@ function App() {
             ]}
             body={
               breakfast?.map((record) => [
-                <ConditionalIf href={record.link}>{record.name}</ConditionalIf>,
+                <ConditionalIf target="_blank" href={record.link}>
+                  {record.name}
+                </ConditionalIf>,
                 <Fragment>{record.specialty}</Fragment>,
                 <Fragment>{record.notes}</Fragment>,
               ]) || []
@@ -184,7 +186,9 @@ function App() {
             ]}
             body={
               lunch?.map((record) => [
-                <ConditionalIf href={record.link}>{record.name}</ConditionalIf>,
+                <ConditionalIf target="_blank" href={record.link}>
+                  {record.name}
+                </ConditionalIf>,
                 <Fragment>{record.specialty}</Fragment>,
                 <Fragment>{record.notes}</Fragment>,
               ]) || []
@@ -219,7 +223,9 @@ function App() {
             ]}
             body={
               stop?.map((record) => [
-                <ConditionalIf href={record.link}>{record.name}</ConditionalIf>,
+                <ConditionalIf target="_blank" href={record.link}>
+                  {record.name}
+                </ConditionalIf>,
                 <Fragment>{record.specialty}</Fragment>,
                 <Fragment>{record.notes}</Fragment>,
               ]) || []
@@ -249,7 +255,9 @@ function App() {
             ]}
             body={
               drink?.map((record) => [
-                <ConditionalIf href={record.link}>{record.name}</ConditionalIf>,
+                <ConditionalIf target="_blank" href={record.link}>
+                  {record.name}
+                </ConditionalIf>,
                 <Fragment>{record.notes}</Fragment>,
               ]) || []
             }
@@ -283,7 +291,9 @@ function App() {
             ]}
             body={
               outside?.map((record) => [
-                <ConditionalIf href={record.link}>{record.name}</ConditionalIf>,
+                <ConditionalIf target="_blank" href={record.link}>
+                  {record.name}
+                </ConditionalIf>,
                 <Fragment>{record.specialty}</Fragment>,
                 <Fragment>{record.notes}</Fragment>,
               ]) || []

@@ -15,7 +15,7 @@ const ConditionalIf: FC<PropsWithChildren<DefaultProps>> = ({
   ...rest
 }) =>
   href ? (
-    <a className={className} {...rest}>
+    <a className={className} href={href} {...rest}>
       {children}
     </a>
   ) : (
