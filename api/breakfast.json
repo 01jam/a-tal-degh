@@ -2,16 +2,19 @@
   {
     "name": "Caffè Del Collegio",
     "specialty": "Gnocco Fritto col Crudo",
-    "notes": "Il gnocco fritto al mattino è il classico dei classici"
+    "notes": "Il gnocco fritto al mattino è il classico dei classici",
+    "link": "https://www.google.com/maps/place/Caff%C3%A8+del+Collegio/@44.6452864,10.9270283,15z/data=!4m2!3m1!1s0x0:0x46bc66df5b115ad3?sa=X&ved=2ahUKEwjS0NG-psP6AhV9SPEDHe-0B9MQ_BJ6BAhoEAU"
   },
   {
     "name": "Forno San Giorgio AKA Dolce Charlotte",
     "specialty": "Erbazzone",
-    "notes": "Li vendono pure interi per 20€ da portare via come una torta"
+    "notes": "Li vendono pure interi per 20€ da portare via come una torta",
+    "link": "https://www.google.com/maps/place/Dolce+Charlotte/@44.6478264,10.9277621,15z/data=!4m2!3m1!1s0x0:0x348fa458d0ddcf03?sa=X&ved=2ahUKEwiv5diAp8P6AhWvW_EDHQr1B44Q_BJ6BAhnEAU"
   },
   {
     "name": "Mercato Albinelli",
     "specialty": "Frittelle di baccalà non sembrano autoctone, eppure...",
-    "notes": "Da visitare la mattina presto, è un mercato mica un ristorante"
+    "notes": "Da visitare la mattina presto, è un mercato mica un ristorante",
+    "link": "https://www.google.com/maps/place/Mercato+Storico+Albinelli/@44.6448083,10.9255386,15z/data=!4m2!3m1!1s0x0:0x51feb487c4323cc3?sa=X&ved=2ahUKEwj3142Ip8P6AhVoSPEDHagNCWwQ_BJ6BAhjEAU"
   }
 ]

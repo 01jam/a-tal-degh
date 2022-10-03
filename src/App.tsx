@@ -145,7 +145,7 @@ function App() {
             ]}
             body={
               breakfast?.map((record) => [
-                <Fragment>{record.name}</Fragment>,
+                <ConditionalIf href={record.link}>{record.name}</ConditionalIf>,
                 <Fragment>{record.specialty}</Fragment>,
                 <Fragment>{record.notes}</Fragment>,
               ]) || []
@@ -184,7 +184,7 @@ function App() {
             ]}
             body={
               lunch?.map((record) => [
-                <Fragment>{record.name}</Fragment>,
+                <ConditionalIf href={record.link}>{record.name}</ConditionalIf>,
                 <Fragment>{record.specialty}</Fragment>,
                 <Fragment>{record.notes}</Fragment>,
               ]) || []
@@ -219,7 +219,7 @@ function App() {
             ]}
             body={
               stop?.map((record) => [
-                <Fragment>{record.name}</Fragment>,
+                <ConditionalIf href={record.link}>{record.name}</ConditionalIf>,
                 <Fragment>{record.specialty}</Fragment>,
                 <Fragment>{record.notes}</Fragment>,
               ]) || []
@@ -249,7 +249,7 @@ function App() {
             ]}
             body={
               drink?.map((record) => [
-                <Fragment>{record.name}</Fragment>,
+                <ConditionalIf href={record.link}>{record.name}</ConditionalIf>,
                 <Fragment>{record.notes}</Fragment>,
               ]) || []
             }
@@ -283,7 +283,7 @@ function App() {
             ]}
             body={
               outside?.map((record) => [
-                <Fragment>{record.name}</Fragment>,
+                <ConditionalIf href={record.link}>{record.name}</ConditionalIf>,
                 <Fragment>{record.specialty}</Fragment>,
                 <Fragment>{record.notes}</Fragment>,
               ]) || []
