@@ -330,7 +330,7 @@ function App() {
 
       {/* Festival */}
       {!!festival?.length && (
-        <Section id={"visit"}>
+        <Section id={"festival"}>
           <Block>
             <h2>Ou, vieni dai</h2>
 
