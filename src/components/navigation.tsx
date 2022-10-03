@@ -1,3 +1,4 @@
+import { useInView } from "framer";
 import { FC, useEffect, useRef, useState } from "react";
 import { css } from "../utils/css";
 import styles from "./navigation.module.scss";
@@ -6,7 +7,8 @@ const Navigation: FC = () => {
   const [scrollDir, setScrollDir] = useState<number>();
   const [height, setHeight] = useState<number>();
 
-  const elRef = useRef<HTMLElement>(null);
+  const navRef = useRef<HTMLElement>(null);
+  const elRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const threshold = 0;
@@ -37,7 +39,7 @@ const Navigation: FC = () => {
     };
 
     const onResize = () => {
-      setHeight(elRef.current?.offsetHeight);
+      setHeight(navRef.current?.offsetHeight);
     };
 
     onResize();
@@ -53,14 +55,18 @@ const Navigation: FC = () => {
     };
   }, [scrollDir]);
 
+  const isInView = useInView(elRef);
+
   return (
     <>
       <nav
-        ref={elRef}
+        ref={navRef}
         className={css(
           styles.nav,
           styles[
-            scrollDir && scrollDir > 0 ? "nav--is-hidden" : "nav--not-hidden"
+            !isInView && scrollDir && scrollDir > 0
+              ? "nav--is-hidden"
+              : "nav--not-hidden"
           ]
         )}
       >
@@ -93,7 +99,7 @@ const Navigation: FC = () => {
           </a>
         </div>
       </nav>
-      <div style={{ height }} />
+      <div ref={elRef} style={{ height }} />
     </>
   );
 };

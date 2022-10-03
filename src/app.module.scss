@@ -15,9 +15,13 @@
 }
 
 .block {
-  padding-top: 70%;
+  padding-top: 60%;
   position: relative;
   cursor: pointer;
+
+  @media only screen and (min-width: 600px) {
+    padding-top: 70%;
+  }
 
   & > * {
     border-radius: 0.5rem;
