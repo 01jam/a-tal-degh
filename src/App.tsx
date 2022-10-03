@@ -65,6 +65,14 @@ function App() {
       .then(({ data }) => data)
   );
 
+  const { data: festival } = useSWR("festival", (resource: string) =>
+    axios
+      .get<any[]>(
+        `https://raw.githubusercontent.com/01jam/a-tal-degh/main/api/${resource}.json`
+      )
+      .then(({ data }) => data)
+  );
+
   return (
     <main className="App">
       {/* Disclaimer */}
