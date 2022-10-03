@@ -81,7 +81,7 @@ function App() {
           <h3>
             Use the ⚠️ button to report something suspect about a record – such
             as wrong opening hours, bad experience, expensive bill, wrong info –
-            it will be revised and updated
+            it will be revised and updated ASAP
           </h3>
         </Block>
       </Section>
@@ -142,14 +142,12 @@ function App() {
                   <mark>Note</mark>
                 </strong>
               </h4>,
-              null,
             ]}
             body={
               breakfast?.map((record) => [
                 <Fragment>{record.name}</Fragment>,
                 <Fragment>{record.specialty}</Fragment>,
                 <Fragment>{record.notes}</Fragment>,
-                <Fragment>📍</Fragment>,
               ]) || []
             }
           />
@@ -183,14 +181,12 @@ function App() {
                   <mark>Note</mark>
                 </strong>
               </h4>,
-              null,
             ]}
             body={
               lunch?.map((record) => [
                 <Fragment>{record.name}</Fragment>,
                 <Fragment>{record.specialty}</Fragment>,
                 <Fragment>{record.notes}</Fragment>,
-                <Fragment>📍</Fragment>,
               ]) || []
             }
           />
@@ -220,14 +216,12 @@ function App() {
                   <mark>Note</mark>
                 </strong>
               </h4>,
-              null,
             ]}
             body={
               stop?.map((record) => [
                 <Fragment>{record.name}</Fragment>,
                 <Fragment>{record.specialty}</Fragment>,
                 <Fragment>{record.notes}</Fragment>,
-                <Fragment>📍</Fragment>,
               ]) || []
             }
           />
@@ -252,13 +246,11 @@ function App() {
                   <mark>Note</mark>
                 </strong>
               </h4>,
-              null,
             ]}
             body={
               drink?.map((record) => [
                 <Fragment>{record.name}</Fragment>,
                 <Fragment>{record.notes}</Fragment>,
-                <Fragment>📍</Fragment>,
               ]) || []
             }
           />
@@ -288,14 +280,12 @@ function App() {
                   <mark>Note</mark>
                 </strong>
               </h4>,
-              null,
             ]}
             body={
               outside?.map((record) => [
                 <Fragment>{record.name}</Fragment>,
                 <Fragment>{record.specialty}</Fragment>,
                 <Fragment>{record.notes}</Fragment>,
-                <Fragment>📍</Fragment>,
               ]) || []
             }
           />

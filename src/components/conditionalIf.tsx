@@ -1,4 +1,6 @@
 import { FC, PropsWithChildren } from "react";
+import { css } from "../utils/css";
+import styles from "./conditionalIf.module.scss";
 
 interface DefaultProps
   extends React.DetailedHTMLProps<
@@ -8,8 +10,18 @@ interface DefaultProps
 
 const ConditionalIf: FC<PropsWithChildren<DefaultProps>> = ({
   href,
+  className,
   children,
   ...rest
-}) => (href ? <a {...rest}>{children}</a> : <a {...rest}>{children}</a>);
+}) =>
+  href ? (
+    <a className={className} {...rest}>
+      {children}
+    </a>
+  ) : (
+    <a className={css(className, styles["disabled"])} {...rest}>
+      {children}
+    </a>
+  );
 
 export { ConditionalIf };
