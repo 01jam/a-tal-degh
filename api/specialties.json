@@ -1,32 +1,32 @@
 [
   {
     "title": "Tortellini",
-    "img": "https://raw.githubusercontent.com/01jam/a-tal-degh/main/contents/gnocco-fritto.jpg",
+    "img": "/contents/tortellini.jpg",
     "link": "https://www.google.com/maps/place/Trattoria+Zanichelli/@44.497676,10.8737897,15z/data=!4m5!3m4!1s0x0:0x7bd1cce8710af19c!8m2!3d44.4976623!4d10.873818"
   },
   {
     "title": "Gnocco fritto",
-    "img": "https://raw.githubusercontent.com/01jam/a-tal-degh/main/contents/gnocco-fritto.jpg",
+    "img": "/contents/gnocco-fritto.jpg",
     "link": "https://www.google.com/maps/place/Trattoria+Zanichelli/@44.497676,10.8737897,15z/data=!4m5!3m4!1s0x0:0x7bd1cce8710af19c!8m2!3d44.4976623!4d10.873818"
   },
   {
     "title": "Erbazzone",
-    "img": "https://raw.githubusercontent.com/01jam/a-tal-degh/main/contents/gnocco-fritto.jpg",
+    "img": "/erbbazzone.jpg",
     "link": "https://www.google.com/maps/place/Trattoria+Zanichelli/@44.497676,10.8737897,15z/data=!4m5!3m4!1s0x0:0x7bd1cce8710af19c!8m2!3d44.4976623!4d10.873818"
   },
   {
     "title": "Frittelle di Baccalà",
-    "img": "https://raw.githubusercontent.com/01jam/a-tal-degh/main/contents/gnocco-fritto.jpg",
+    "img": "/frittelle.jpg",
     "link": "https://www.google.com/maps/place/Trattoria+Zanichelli/@44.497676,10.8737897,15z/data=!4m5!3m4!1s0x0:0x7bd1cce8710af19c!8m2!3d44.4976623!4d10.873818"
   },
   {
     "title": "Borlenghi",
-    "img": "https://raw.githubusercontent.com/01jam/a-tal-degh/main/contents/gnocco-fritto.jpg",
+    "img": "/contents/borlenghi.jpg",
     "link": "https://www.google.com/maps/place/Trattoria+Zanichelli/@44.497676,10.8737897,15z/data=!4m5!3m4!1s0x0:0x7bd1cce8710af19c!8m2!3d44.4976623!4d10.873818"
   },
   {
     "title": "Il tris di primi",
-    "img": "https://raw.githubusercontent.com/01jam/a-tal-degh/main/contents/gnocco-fritto.jpg",
+    "img": "/contents/primi.jpg",
     "link": "https://www.google.com/maps/place/Trattoria+Zanichelli/@44.497676,10.8737897,15z/data=!4m5!3m4!1s0x0:0x7bd1cce8710af19c!8m2!3d44.4976623!4d10.873818"
   }
 ]
