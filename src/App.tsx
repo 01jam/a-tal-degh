@@ -100,181 +100,191 @@ function App() {
       )}
 
       {/* Breakfast */}
-      <Section id={"breakfast"}>
-        <Block>
-          <h2>Appena svegli</h2>
+      {!!breakfast?.length && (
+        <Section id={"breakfast"}>
+          <Block>
+            <h2>Appena svegli</h2>
 
-          <p className={typo.medium}>
-            Sì, il gnocco fritto si mangia a colazione
-          </p>
-        </Block>
-        <Table
-          head={[
-            <h4>
-              <strong>
-                <mark>Nome</mark>
-              </strong>
-            </h4>,
-            <h4>
-              <strong>
-                <mark>Specialità</mark>
-              </strong>
-            </h4>,
-            <h4>
-              <strong>
-                <mark>Note</mark>
-              </strong>
-            </h4>,
-            null,
-          ]}
-          body={
-            breakfast?.map((record) => [
-              <Fragment>{record.name}</Fragment>,
-              <Fragment>{record.specialty}</Fragment>,
-              <Fragment>{record.notes}</Fragment>,
-              <Fragment>📍</Fragment>,
-            ]) || []
-          }
-        />
-      </Section>
+            <p className={typo.medium}>
+              Sì, il gnocco fritto si mangia a colazione
+            </p>
+          </Block>
+          <Table
+            head={[
+              <h4>
+                <strong>
+                  <mark>Nome</mark>
+                </strong>
+              </h4>,
+              <h4>
+                <strong>
+                  <mark>Specialità</mark>
+                </strong>
+              </h4>,
+              <h4>
+                <strong>
+                  <mark>Note</mark>
+                </strong>
+              </h4>,
+              null,
+            ]}
+            body={
+              breakfast?.map((record) => [
+                <Fragment>{record.name}</Fragment>,
+                <Fragment>{record.specialty}</Fragment>,
+                <Fragment>{record.notes}</Fragment>,
+                <Fragment>📍</Fragment>,
+              ]) || []
+            }
+          />
+        </Section>
+      )}
 
       {/* Lunch */}
-      <Section id={"lunch"}>
-        <Block>
-          <h2>Trattorie</h2>
+      {!!lunch?.length && (
+        <Section id={"lunch"}>
+          <Block>
+            <h2>Trattorie</h2>
 
-          <p className={typo.medium}>
-            La regola generale? Se ha il menù fisso vai tranquill*
-          </p>
-        </Block>
-        <Table
-          head={[
-            <h4>
-              <strong>
-                <mark>Nome</mark>
-              </strong>
-            </h4>,
-            <h4>
-              <strong>
-                <mark>Specialità</mark>
-              </strong>
-            </h4>,
-            <h4>
-              <strong>
-                <mark>Note</mark>
-              </strong>
-            </h4>,
-            null,
-          ]}
-          body={
-            lunch?.map((record) => [
-              <Fragment>{record.name}</Fragment>,
-              <Fragment>{record.specialty}</Fragment>,
-              <Fragment>{record.notes}</Fragment>,
-              <Fragment>📍</Fragment>,
-            ]) || []
-          }
-        />
-      </Section>
+            <p className={typo.medium}>
+              La regola generale? Se ha il menù fisso vai tranquill*
+            </p>
+          </Block>
+          <Table
+            head={[
+              <h4>
+                <strong>
+                  <mark>Nome</mark>
+                </strong>
+              </h4>,
+              <h4>
+                <strong>
+                  <mark>Specialità</mark>
+                </strong>
+              </h4>,
+              <h4>
+                <strong>
+                  <mark>Note</mark>
+                </strong>
+              </h4>,
+              null,
+            ]}
+            body={
+              lunch?.map((record) => [
+                <Fragment>{record.name}</Fragment>,
+                <Fragment>{record.specialty}</Fragment>,
+                <Fragment>{record.notes}</Fragment>,
+                <Fragment>📍</Fragment>,
+              ]) || []
+            }
+          />
+        </Section>
+      )}
 
       {/* Snack */}
-      <Section id={"stop"}>
-        <Block>
-          <h2>Pranzo al volo</h2>
-        </Block>
-        <Table
-          head={[
-            <h4>
-              <strong>
-                <mark>Nome</mark>
-              </strong>
-            </h4>,
-            <h4>
-              <strong>
-                <mark>Specialità</mark>
-              </strong>
-            </h4>,
-            <h4>
-              <strong>
-                <mark>Note</mark>
-              </strong>
-            </h4>,
-            null,
-          ]}
-          body={
-            stop?.map((record) => [
-              <Fragment>{record.name}</Fragment>,
-              <Fragment>{record.specialty}</Fragment>,
-              <Fragment>{record.notes}</Fragment>,
-              <Fragment>📍</Fragment>,
-            ]) || []
-          }
-        />
-      </Section>
+      {!!stop?.length && (
+        <Section id={"stop"}>
+          <Block>
+            <h2>Pranzo al volo</h2>
+          </Block>
+          <Table
+            head={[
+              <h4>
+                <strong>
+                  <mark>Nome</mark>
+                </strong>
+              </h4>,
+              <h4>
+                <strong>
+                  <mark>Specialità</mark>
+                </strong>
+              </h4>,
+              <h4>
+                <strong>
+                  <mark>Note</mark>
+                </strong>
+              </h4>,
+              null,
+            ]}
+            body={
+              stop?.map((record) => [
+                <Fragment>{record.name}</Fragment>,
+                <Fragment>{record.specialty}</Fragment>,
+                <Fragment>{record.notes}</Fragment>,
+                <Fragment>📍</Fragment>,
+              ]) || []
+            }
+          />
+        </Section>
+      )}
 
       {/* Bere e aperitivo */}
-      <Section id={"drink"}>
-        <Block>
-          <h2>Bere</h2>
-        </Block>
-        <Table
-          head={[
-            <h4>
-              <strong>
-                <mark>Nome</mark>
-              </strong>
-            </h4>,
-            <h4>
-              <strong>
-                <mark>Note</mark>
-              </strong>
-            </h4>,
-            null,
-          ]}
-          body={
-            drink?.map((record) => [
-              <Fragment>{record.name}</Fragment>,
-              <Fragment>{record.notes}</Fragment>,
-              <Fragment>📍</Fragment>,
-            ]) || []
-          }
-        />
-      </Section>
+      {!!drink?.length && (
+        <Section id={"drink"}>
+          <Block>
+            <h2>Bere</h2>
+          </Block>
+          <Table
+            head={[
+              <h4>
+                <strong>
+                  <mark>Nome</mark>
+                </strong>
+              </h4>,
+              <h4>
+                <strong>
+                  <mark>Note</mark>
+                </strong>
+              </h4>,
+              null,
+            ]}
+            body={
+              drink?.map((record) => [
+                <Fragment>{record.name}</Fragment>,
+                <Fragment>{record.notes}</Fragment>,
+                <Fragment>📍</Fragment>,
+              ]) || []
+            }
+          />
+        </Section>
+      )}
 
       {/* Cena fuori modena */}
-      <Section id={"outside"}>
-        <Block>
-          <h2>Cena al fresco</h2>
-        </Block>
-        <Table
-          head={[
-            <h4>
-              <strong>
-                <mark>Nome</mark>
-              </strong>
-            </h4>,
-            <h4>
-              <strong>
-                <mark>Specialità</mark>
-              </strong>
-            </h4>,
-            <h4>
-              <strong>
-                <mark>Note</mark>
-              </strong>
-            </h4>,
-            null,
-          ]}
-          body={
-            outside?.map((record) => [
-              <Fragment>{record.name}</Fragment>,
-              <Fragment>{record.specialty}</Fragment>,
-              <Fragment>{record.notes}</Fragment>,
-              <Fragment>📍</Fragment>,
-            ]) || []
-          }
-        />
-      </Section>
+      {!!outside?.length && (
+        <Section id={"outside"}>
+          <Block>
+            <h2>Cena al fresco</h2>
+          </Block>
+          <Table
+            head={[
+              <h4>
+                <strong>
+                  <mark>Nome</mark>
+                </strong>
+              </h4>,
+              <h4>
+                <strong>
+                  <mark>Specialità</mark>
+                </strong>
+              </h4>,
+              <h4>
+                <strong>
+                  <mark>Note</mark>
+                </strong>
+              </h4>,
+              null,
+            ]}
+            body={
+              outside?.map((record) => [
+                <Fragment>{record.name}</Fragment>,
+                <Fragment>{record.specialty}</Fragment>,
+                <Fragment>{record.notes}</Fragment>,
+                <Fragment>📍</Fragment>,
+              ]) || []
+            }
+          />
+        </Section>
+      )}
 
       <nav className={styles.nav}>
         <a href={"#specialties"} className={styles.link}>
