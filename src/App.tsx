@@ -5,20 +5,22 @@ import { Table } from "./components/table";
 import styles from "./app.module.scss";
 import useSWR from "swr";
 import axios from "axios";
+import { typo } from "./styles";
 
 function App() {
-  const { data: specialties, error } = useSWR("/api/user/123", (url: string) =>
-    axios
-      .get<any[]>(
-        "https://raw.githubusercontent.com/01jam/a-tal-degh/main/api/specialties.json"
-      )
-      .then(({ data }) => data)
+  const { data: specialties, error } = useSWR(
+    "specialties",
+    (resource: string) =>
+      axios
+        .get<any[]>(
+          `https://raw.githubusercontent.com/01jam/a-tal-degh/main/api/${resource}.json`
+        )
+        .then(({ data }) => data)
   );
-
-  console.log(specialties);
 
   return (
     <main className="App">
+      {/* Disclaimer */}
       <Section bg="black">
         <Block>
           <h3>
@@ -28,26 +30,36 @@ function App() {
           </h3>
         </Block>
       </Section>
+
+      {/* Specialties */}
       {!!specialties?.length && (
-        <Section>
+        <Section id={"specialties"}>
           <Block>
             <h2>Specialità</h2>
+
+            <p className={typo.medium}>
+              I re indiscussi della tavola o cose difficili da torvare
+              altrove...
+            </p>
+
+            <div className={styles.grid}>
+              {specialties.map((specialty: any, index: number) => (
+                <a
+                  key={index}
+                  href={specialty.link}
+                  target="_blank"
+                  className={styles.block}
+                >
+                  <img src={specialty.img} />
+                </a>
+              ))}
+            </div>
           </Block>
-          <div className={styles.grid}>
-            {specialties.map((specialty: any, index: number) => (
-              <a
-                key={index}
-                href={specialty.link}
-                target="_blank"
-                className={styles.block}
-              >
-                <img src={specialty.img} />
-              </a>
-            ))}
-          </div>
         </Section>
       )}
-      <Section>
+
+      {/* Breakfast */}
+      <Section id={"breakfast"}>
         <Block>
           <h2>Appena svegli</h2>
         </Block>
@@ -82,6 +94,15 @@ function App() {
           ]}
         />
       </Section>
+
+      <nav className={styles.nav}>
+        <a href={"#specialties"} className={styles.link}>
+          Specialties 👑
+        </a>
+        <a href={"#breakfast"} className={styles.link}>
+          Appena svegli ☕️
+        </a>
+      </nav>
     </main>
   );
 }
