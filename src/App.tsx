@@ -169,7 +169,7 @@ function App() {
           <Block>
             <h2>Una breve visita</h2>
 
-            <p className="text-2xl">Cosa vedere se si è di passaggio</p>
+            <p className="text-2xl">Cosa vedere se si è di passaggio...gratis</p>
 
             <Grid records={visit} />
           </Block>

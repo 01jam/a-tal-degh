@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { ConditionalIf } from "./components/conditionalIf";
 import { Record } from "./api";
+import styles from "./rows.module.scss";
 
 /**
  * The zone and when columns only earn their place when some record in the set
@@ -62,7 +63,16 @@ const rows = (records: Record[], withSpecialty = true) =>
 		[
 			<Fragment>{name(record)}</Fragment>,
 			withSpecialty ? <Fragment>{record.specialty}</Fragment> : null,
-			hasZone(records) ? <Fragment>{record.zone}</Fragment> : null,
+			// The wrapper only goes in when there is a zone to hold: an empty
+			// element would still count as content and keep the stacked layout
+			// from dropping the field's label.
+			hasZone(records) ? (
+				<Fragment>
+					{record.zone ? (
+						<span className={styles.zone}>{record.zone}</span>
+					) : null}
+				</Fragment>
+			) : null,
 			hasWhen(records) ? (
 				<Fragment>{record.when?.join(", ")}</Fragment>
 			) : null,

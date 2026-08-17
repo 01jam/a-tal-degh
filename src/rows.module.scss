@@ -1,0 +1,6 @@
+// "Fuori città" and "In città" are two words the auto layout is happy to break
+// across lines whenever the notes column squeezes the table. The zone is a
+// label, not prose, so it stays on one line and the squeeze lands elsewhere.
+.zone {
+	white-space: nowrap;
+}

@@ -35,6 +35,7 @@ places:
     tags: [colazione, gnocco-fritto]
   - name: Insolito Bar
     specialty: Gnocco fritto e borlenghi
+    notes: Locale da battaglia ma probabilmente il miglior gnocco fritto in città. Sicuramente ha il miglior prezzo per il tipo di menù
     zone: In città
     when: [pranzo, cena]
     rating: 5
@@ -51,6 +52,7 @@ places:
     tags: [borlenghi]
   - name: Trattoria Zanichelli
     specialty: Gnocco fritto e tris di primi
+    notes: 12 anni fa erano 20 euro, poi 25, ora 30. Io mi sbrigherei ad andarci
     zone: Collina
     when: [pranzo, cena]
     rating: 4
@@ -71,11 +73,14 @@ places:
     zone: In città
     when: [colazione, pranzo, cena]
     link: https://www.google.com/maps/place/Mercato+Storico+Albinelli/@44.6448083,10.9255386,15z/data=!4m2!3m1!1s0x0:0x51feb487c4323cc3?sa=X&ved=2ahUKEwj3142Ip8P6AhVoSPEDHagNCWwQ_BJ6BAhjEAU
-    rating: 5
-    price: 4
+    rating: 4
+    price: 3
     tags: [colazione, frittelle-di-baccala]
   - name: Al budgàtt
     specialty: Frittelle di baccalà
+    notes: In inverno va sicuramente preso il cotechino. Le tagliatelle al ragù hanno esattamente il sapore che dovrebbero avere
+    zone: Fuori città
+    when: [pranzo, cena]
     link: https://www.google.com/maps/place/Tradizione+Modenese+da+Stefani+-+Gastronomia+con+Degustazione+e+Trattoria/@44.5512879,10.8931635,624m/data=!3m1!1e3!4m6!3m5!1s0x477fe38bcaf91df1:0xb920162c2970c22c!8m2!3d44.5512802!4d10.895299!16s%2Fg%2F1w97t7d3?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
     rating: 5
     price: 3
@@ -86,13 +91,17 @@ places:
     zone: In città
     when: [pranzo, cena]
     link: https://www.google.com/maps/place/Zemi%C3%A0n+piccola+osteria/@44.6483652,10.9278207,15z/data=!4m2!3m1!1s0x0:0xe52b2e5ab7a99466?sa=X&ved=2ahUKEwikwNb1p8P6AhVQR_EDHSJPCiwQ_BJ6BAhtEAU
+    rating: 5
+    price: 3
     tags: [pranzo]
   - name: Trattoria Aldina
     specialty: Lo stinco e i tortellini sono tappa obbligata
-    notes: LUN - VEN A PRANZO non prende prenotazioni
+    notes: Non prende prenotazioni
     zone: In città
     when: [pranzo]
     link: https://www.google.com/maps/place/Trattoria+Aldina/@44.6447691,10.9249297,15z/data=!4m5!3m4!1s0x0:0xe2c65becf7af57ff!8m2!3d44.6447318!4d10.9250179
+    rating: 4
+    price: 4
     tags: [pranzo, tortellini]
   - name: Ermes
     specialty: T'è propria un Gabian
@@ -100,6 +109,8 @@ places:
     zone: In città
     when: [pranzo, cena]
     link: https://www.google.com/maps/place/Osteria+Ermes/@44.649487,10.9253776,15z/data=!4m2!3m1!1s0x0:0xa844c200b147ae78?sa=X&ved=2ahUKEwievOKKqMP6AhUZQfEDHVbEBw0Q_BJ6BAhoEAU
+    rating: 4
+    price: 4
     tags: [pranzo]
   - name: Salumeria con cucina
     specialty: Scegli tra qualunque tipo di cibo
@@ -107,6 +118,8 @@ places:
     zone: In città
     when: [pranzo, cena]
     link: https://www.google.com/maps/place/Salumeria+con+cucina/@44.6473678,10.9226053,15z/data=!4m2!3m1!1s0x0:0x31a78bbf26ec3c4e?sa=X&ved=2ahUKEwitiOjoqMP6AhWLRfEDHQFKDlgQ_BJ6BAh3EAU
+    rating: 4
+    price: 5
     tags: [volo]
   - name: pizzALTaglio
     specialty: null
@@ -114,21 +127,28 @@ places:
     zone: In città
     when: [pranzo, cena]
     link: https://www.google.com/maps/place/pizzALTaglio/@44.6464697,10.9271085,15z/data=!4m2!3m1!1s0x0:0x15ed5e9220b8ff03?sa=X&ved=2ahUKEwifh5L7qMP6AhXQXfEDHRvTDgUQ_BJ6BAhhEAU
+    rating: 3
+    price: 4
     tags: [volo]
   - name: Forno Alberghini
     notes: Non ricordo se qui avevano il gnocco ingrassato
     zone: In città
     when: [tutto il giorno]
     link: https://www.google.com/maps/place/Nuova+Panificio+Alberghini+Modena/@44.6376063,10.9300673,17z/data=!3m2!4b1!5s0x477fef43949e075b:0xaa6471cc81e6598e!4m6!3m5!1s0x477fef43927e905d:0xa81c7122a295456a!8m2!3d44.6376025!4d10.9326422!16s%2Fg%2F11h0z2xnm?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
+    rating: 3
+    price: 4
     tags: [volo]
   - name: Forno Cristini
+    specialty: Grissini
     notes: La stria bassa non è male (molto poco unta ma morbida), così come l'erbazzone — anche se non ha nulla a che spartire con quello del compianto Forno San Giorgio
     zone: In città
     when: [tutto il giorno]
     link: https://www.google.com/maps/search/Forno+cristini+/@44.6376249,10.9223425,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
+    rating: 4
+    price: 4
     tags: [volo, erbazzone]
   - name: La Bicicletta
-    notes: 🍹🍺🍖🧀 Un buon Negroni, e all'occorrenza due pezzi di gnocco li fanno al volo
+    notes: Un buon Negroni, e all'occorrenza due pezzi di gnocco li fanno al volo
     zone: In città
     when: [sera]
     rating: 5
@@ -136,13 +156,15 @@ places:
     link: https://www.google.com/maps/place/La+Bicicletta+-+Caff%C3%A8+%26+Salumi/@44.6468612,10.9218196,17z/data=!3m1!4b1!4m6!3m5!1s0x477fef139db3d7f5:0x83a3e2022c99cbcb!8m2!3d44.6468574!4d10.9243945!16s%2Fg%2F1thx2x00?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
     tags: [bere]
   - name: Salumeria Hosteria Giusti
-    notes: 🍹🍷🧀 Beh alla fine era una salumeria. Non sbaglia
+    notes: Beh alla fine era una salumeria. Non sbaglia
     zone: In città
     when: [mattina, sera]
     link: https://www.google.com/maps/place/Salumeria+Giusti/@44.6472254,10.9275294,19z/data=!3m1!4b1!4m6!3m5!1s0x477fef144a6d5dbf:0x64fac6a6d624acd8!8m2!3d44.6472244!4d10.9281731!16s%2Fg%2F1tf_rqrf?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
+    rating: 4
+    price: 3
     tags: [bere]
   - name: Mr. Brown
-    notes: 🍺🍟 È un pub dei più classici
+    notes: È un pub dei più classici
     zone: In città
     when: [sera]
     rating: 4
@@ -150,28 +172,32 @@ places:
     link: https://www.google.com/maps/place/Mr.+Brown/@44.6434507,10.9263312,17z/data=!3m1!4b1!4m6!3m5!1s0x477fef6ab1383eed:0xd3762b252cae5893!8m2!3d44.6434469!4d10.9289061!16s%2Fg%2F1th7x5zk?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
     tags: [bere]
   - name: La Vinoteca
-    notes: 🍷🧀 Anche qui tra un vino e l'altro due affettati e del gnocco fritto lo hanno. La selezione di vini è importante spendendo normale
+    notes: Anche qui tra un vino e l'altro due affettati e del gnocco fritto lo hanno. La selezione di vini è importante spendendo normale
     zone: In città
     when: [pranzo, sera]
     link: https://www.google.com/maps/place/Vinoteca+Modena/@44.6482235,10.9367704,18z/data=!3m2!4b1!5s0x477fef3bf81b1b61:0xd41f99c766dc942!4m6!3m5!1s0x477fef3bf9eb793d:0x8112cc7b4534ae9c!8m2!3d44.648222!4d10.937795!16s%2Fg%2F1ptwhlpdm?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
     tags: [bere]
+    rating: 4
+    price: 4
   - name: Slanzi Pub & Vinyl
-    notes: 🍺 È la definizione di "usciamo a bere birrette". Tavolini a bordo strada fuori dalla confusione della Via Emilia
+    notes: È la definizione di "usciamo a bere birrette". Tavolini a bordo strada fuori dalla confusione della Via Emilia
     zone: In città
     when: [sera]
     link: https://www.google.com/maps/place/Slanzi+Pub+%26+Vinyl/@44.6470667,10.9203858,17z/data=!3m1!4b1!4m6!3m5!1s0x477fef13ac056731:0x17009961cd4021ed!8m2!3d44.6470629!4d10.9229607!16s%2Fg%2F11dyxdvw0c?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
     tags: [bere]
+    rating: 4
+    price: 5
   - name: Cesare Modena
-    notes: 🍸 Cocktail bar. È un po' fancy e sicuramente il più costoso del gruppo (comunque meno di un posto in centro a Milano). Direi per bere con moderazione ma di buona qualità
+    notes: Cocktail bar. È un po' fancy e sicuramente il più costoso del gruppo (comunque meno di un posto in centro a Milano). Direi per bere con moderazione ma di buona qualità
     zone: In città
     when: [sera]
-    rating: 4
+    rating: 5
     price: 3
     link: https://www.google.com/maps/place/Cesare+Modena+%E2%80%94+Cocktail+Bar/@44.6463713,10.9212879,18z/data=!3m1!4b1!4m6!3m5!1s0x477fefa9be2041fd:0x4d135cff4de0cbf7!8m2!3d44.6463696!4d10.9224672!16s%2Fg%2F11mbw9ndkk?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
     tags: [bere]
   - name: Agriturismo dal Pastore
-    specialty: I migliori primi della provincia. A mani basse
-    notes: 45/50 minuti da Modena, ma ne vale la pena, portare una felpa per la sera
+    specialty: Tutto il menù
+    notes: I migliori primi della provincia. A mani basse. Non fate l'errore di scegliere dal menù, dite che volete il menù completo. 45/50 minuti da Modena, ma ne vale la pena, portare una felpa per la sera
     zone: Collina
     when: [pranzo, cena]
     rating: 5
@@ -184,13 +210,15 @@ places:
     when: [pranzo, cena]
     link: https://www.google.com/maps/place/Agrituristica+Le+Casette/@44.5021302,10.9308583,17z/data=!4m10!3m9!1s0x477fe1add06ab783:0xe5fd82c0ce4d96a!5m3!1s2026-09-15!4m1!1i2!8m2!3d44.5021264!4d10.9334332!16s%2Fg%2F1tkjk120?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
     tags: [gnocco-fritto, tris-di-primi, fuori]
+    rating: 4
+    price: 5
 visit:
   - title: Duomo di Modena
     img: /contents/pixel/duomo2x.png
-    link: https://www.google.com/maps/place/Trattoria+Aldina/@44.6447691,10.9249297,15z/data=!4m2!3m1!1s0x0:0xe2c65becf7af57ff?sa=X&ved=2ahUKEwiDsYzhkMP6AhWpX_EDHaxDAVoQ_BJ6BAhqEAU
+    link: https://www.google.com/maps/place/Duomo+di+Modena/@44.6463096,10.9229417,17z/data=!3m1!4b1!4m6!3m5!1s0x477fef1107b93e71:0x1f2339b9dca72353!8m2!3d44.6463058!4d10.9255166!16zL20vMDkwNjBx?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
   - title: Cimitero di San Cataldo
     img: /contents/pixel/san-cataldo2x.png
-    link: https://www.google.com/maps/place/Trattoria+Aldina/@44.6447691,10.9249297,15z/data=!4m2!3m1!1s0x0:0xe2c65becf7af57ff?sa=X&ved=2ahUKEwiDsYzhkMP6AhWpX_EDHaxDAVoQ_BJ6BAhqEAU
+    link: https://www.google.com/maps/place/Cimitero+Monumentale+di+San+Cataldo/@44.659172,10.9068404,17z/data=!3m1!4b1!4m6!3m5!1s0x477fefabc42c3661:0x83a66d7df1bdac50!8m2!3d44.6591682!4d10.9094153!16s%2Fg%2F11f5dhhj6h?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
   - title: Free Walking Tour
     img: /contents/pixel/walk2x.png
     link: https://freewalkingtouritalia.com/products/free-walking-tour-modena
