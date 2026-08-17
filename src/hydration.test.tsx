@@ -6,12 +6,23 @@ import App from './App';
 import { CONTENT_KEY } from './api';
 import { render as renderToStaticMarkup } from './entry-server';
 
-const content = {
-  breakfast: [
-    { name: 'Test place', specialty: 'Test dish', notes: 'Test note' },
-  ],
-  specialties: [{ title: 'Test specialty', img: '/img.png', link: null }],
-};
+// vi.mock is hoisted above the rest of the module, so the fixture it closes
+// over has to be declared through vi.hoisted rather than a plain const.
+const { content } = vi.hoisted(() => ({
+  content: {
+    places: [
+      {
+        name: 'Test place',
+        specialty: 'Test dish',
+        notes: 'Test note',
+        tags: ['colazione'],
+      },
+    ],
+    specialties: [
+      { title: 'Test specialty', img: '/img.png', link: null, dish: 'test-dish' },
+    ],
+  },
+}));
 
 const fallback = { [CONTENT_KEY]: content };
 

@@ -35,7 +35,16 @@ const Table: FC<DefaultProps> = ({ label, columns, rows }) => (
 			{rows.map((row, rowIndex) => (
 				<Row key={rowIndex} id={rowIndex}>
 					{row.map((cell, cellIndex) => (
-						<Cell key={cellIndex}>{cell}</Cell>
+						<Cell key={cellIndex}>
+							{/* Stacked on a narrow screen, each cell has to name
+							    itself: the header row is off screen there. Hidden
+							    from assistive tech because the grid's real column
+							    headers already say the same thing. */}
+							<span className={styles.label} aria-hidden='true'>
+								{columns[cellIndex]}
+							</span>
+							<span className={styles.value}>{cell}</span>
+						</Cell>
 					))}
 				</Row>
 			))}

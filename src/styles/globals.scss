@@ -1,0 +1,210 @@
+// Mantine's naming (xs / sm / md / lg / xl, extended upwards for display
+// sizes). The values are this site's own: md is body text, xl is the size the
+// section intros already used.
+//
+// The three display steps are fluid. clamp() replaces the vw + breakpoint
+// rules the headings used before, which is what lets them sit in the scale
+// while staying responsive.
+$font-sizes: (
+	"xs": 0.75rem,
+	"sm": 0.875rem,
+	"md": 1rem,
+	"lg": 1.25rem,
+	"xl": 1.5rem,
+	"2xl": clamp(18px, 2vw, 40px),
+	"3xl": clamp(21px, 2.75vw, 44px),
+	"4xl": clamp(44px, 8.5vw, 160px),
+);
+
+// Absolute spacing only. Margins expressed in em stay in em: they are
+// typographic rhythm tied to the local font size, which is a different thing
+// and is not tokenised in Mantine either.
+$spacings: (
+	"xs": 0.25rem,
+	"sm": 0.5rem,
+	"md": 1rem,
+	"lg": 1.5rem,
+	"xl": 2rem,
+	"2xl": 2.5rem,
+);
+
+:root {
+	--black: #1f1f1f;
+	--dark-blue: #2a2a9c;
+	--blue: #3549ff;
+	--gray: rgb(234, 234, 234);
+	--gray-dark: rgb(205, 205, 205);
+	--white: rgb(255, 255, 255);
+
+	// Table accents. These default to the page's own blue background; a
+	// component that sits on a different surface (e.g. the dish overlay's
+	// card) redeclares them locally instead of the table needing a variant.
+	--row-alt: var(--dark-blue);
+	--link-underline: var(--white);
+
+	@each $name, $size in $font-sizes {
+		--font-size-#{$name}: #{$size};
+	}
+
+	@each $name, $size in $spacings {
+		--spacing-#{$name}: #{$size};
+	}
+}
+
+@each $name, $size in $font-sizes {
+	.text-#{$name} {
+		font-size: var(--font-size-#{$name});
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+
+	// Keep the page scrollbar visible at all times, including while a modal is
+	// open. react-aria's scroll lock otherwise hides it and reserves its width
+	// with `scrollbar-gutter: stable`; that gutter is painted by the UA rather
+	// than by the overlay's scrim, so no positioned element can cover it and it
+	// shows through as a bare strip beside the modal. With the real scrollbar
+	// still there, no gutter is ever created and nothing shifts.
+	//
+	// !important is required and deliberate: react-aria sets `overflow: hidden`
+	// as an inline style, which a normal declaration cannot outrank.
+	overflow-y: scroll !important;
+}
+
+html,
+body {
+	// The system stack stays as the fallback: it is what renders during the
+	// font-display: swap window, so keeping it makes the swap less abrupt.
+	font-family: "Geist Variable", -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+		"Helvetica Neue", sans-serif;
+
+	background-color: var(--blue);
+	color: var(--white);
+	font-size: 14px;
+
+	@media only screen and (min-width: 600px) {
+		font-size: 16px;
+	}
+}
+
+body {
+	margin: 0;
+}
+
+a {
+	text-transform: inherit;
+	color: inherit;
+	text-decoration: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-weight: 400;
+}
+
+h2 {
+	font-size: var(--font-size-4xl);
+
+	// In em this margin was a quarter of a font size that clamps up to 192px,
+	// so the gap under a section title grew to ~48px on a wide screen. A fixed
+	// value keeps title and subtitle together at every width.
+	margin-bottom: var(--spacing-sm);
+}
+
+// Without this the paragraph's own 1em top margin collapses over the margin
+// above and wins, putting back a gap larger than the one just set.
+h2 + p {
+	margin-top: 0;
+}
+
+h3 {
+	font-size: var(--font-size-3xl);
+	max-width: 28em;
+	line-height: 1.2;
+
+	& + & {
+		margin-bottom: 0.5em;
+	}
+}
+
+// Only used for table column headers, which read better a step down from the
+// display sizes. The margin reset matters: the cell already sets its own
+// padding, and the browser's default h4 block margins stack on top of it.
+h4 {
+	font-size: var(--font-size-lg);
+	max-width: 28em;
+	margin: 0;
+}
+
+
+table {
+	text-align: left;
+	width: 100%;
+	border-spacing: 0;
+	border-collapse: separate;
+
+	a {
+		cursor: pointer;
+		border-bottom: 1px solid var(--link-underline);
+	}
+
+	tr,
+	th,
+	td {
+		font: inherit;
+		vertical-align: top;
+	}
+
+	// The name column keeps its content on one line for as long as it fits;
+	// the auto layout's default is to hand width to whichever column has the
+	// most text, which is never this one. The other cells take the squeeze,
+	// until the name itself passes max-width and is truncated instead.
+	tr > :first-child {
+		width: 1%;
+		max-width: 18em;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	th,
+	td {
+		padding-top: var(--spacing-md);
+		padding-bottom: var(--spacing-md);
+	}
+
+	td + td,
+	th + th {
+		padding-left: var(--spacing-md);
+	}
+
+	tr {
+		& > :first-child {
+			padding-left: var(--spacing-md);
+		}
+
+		& > :last-child {
+			padding-right: var(--spacing-md);
+		}
+	}
+
+	tbody {
+		tr:nth-child(odd) {
+			background-color: var(--row-alt);
+		}
+	}
+}
+
+strong {
+	font-weight: 600;
+}
+
+mark {
+	color: inherit;
+	background-color: transparent;
+}

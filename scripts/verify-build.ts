@@ -41,20 +41,32 @@ const html = fs.readFileSync(indexPath, "utf-8");
 check(!html.includes("<!--app-html-->"), "markup placeholder was replaced");
 check(html.includes("__SWR_FALLBACK__"), "fallback data was injected");
 
-/* 2. Every section made it into the static markup. */
+/* 2. Every page section made it into the static markup, and content.yml's
+      records made it in too. These are checked separately because `places`
+      is one content key filtered into five page sections (App.tsx tags each
+      record with an occasion), so the two are no longer 1:1. */
 const contentPath = path.join(root, "api", "content.yml");
 const content =
 	(parse(fs.readFileSync(contentPath, "utf-8")) as Content | null) ?? {};
 
 check(Object.keys(content).length > 0, "api/content.yml has sections");
 
+const SECTION_IDS = [
+	"specialties",
+	"breakfast",
+	"lunch",
+	"stop",
+	"drink",
+	"outside",
+	"visit",
+	"festival",
+];
+for (const id of SECTION_IDS) {
+	check(html.includes(`id="${id}"`), `section "${id}" is in the static HTML`);
+}
+
 for (const [resource, records] of Object.entries(content)) {
 	const label = records[0]?.name ?? records[0]?.title;
-
-	check(
-		html.includes(`id="${resource}"`),
-		`section "${resource}" is in the static HTML`
-	);
 	// Escaped the same way React escapes it, so the comparison is meaningful.
 	const escaped = label?.replace(/&/g, "&amp;").replace(/</g, "&lt;");
 	check(

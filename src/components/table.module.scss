@@ -1,3 +1,90 @@
 .container {
   margin: 1em 0;
+
+  // The in-cell labels only exist for the stacked layout below.
+  .label {
+    display: none;
+  }
+
+  // Six columns do not fit a phone: the table overflowed and took the whole
+  // page's horizontal scroll with it. Under the breakpoint every row becomes
+  // a card instead, name on top and one labelled line per field.
+  @media only screen and (max-width: 599px) {
+    display: block;
+
+    thead {
+      // Still in the accessibility tree, so the grid keeps the column headers
+      // that name each cell for a screen reader — just out of sight, since
+      // sighted readers now get the labels inside the cells.
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    tbody {
+      display: block;
+    }
+
+    tr {
+      display: block;
+      box-sizing: border-box;
+      padding: var(--spacing-md);
+      border-radius: 0.5rem;
+      // Every card gets the same surface here: striping reads as structure in
+      // a dense table, but as an accident once the rows are separate blocks.
+      background-color: var(--row-alt);
+
+      & + tr {
+        margin-top: var(--spacing-sm);
+      }
+    }
+
+    td {
+      display: flex;
+      column-gap: var(--spacing-sm);
+      // The row owns the padding now; these would stack on top of it.
+      padding: 0;
+
+      // Separates one field from the next. On the cell rather than the row so
+      // it collapses along with any cell the record left empty.
+      & + td {
+        margin-top: var(--spacing-xs);
+      }
+    }
+
+    // A field the record never filled in would otherwise show as a bare label.
+    td:has(.value:empty) {
+      display: none;
+    }
+
+    .label {
+      display: block;
+      flex: 0 0 5.5em;
+      opacity: 0.7;
+    }
+
+    // The name is the card's heading rather than one labelled line among the
+    // others, so it drops the desktop truncation rules and its own label.
+    tr > :first-child {
+      display: block;
+      width: auto;
+      max-width: none;
+      white-space: normal;
+      overflow: visible;
+      padding-left: 0;
+      font-size: var(--font-size-lg);
+      margin-bottom: var(--spacing-sm);
+
+      .label {
+        display: none;
+      }
+    }
+
+    tr > :last-child {
+      padding-right: 0;
+    }
+  }
 }

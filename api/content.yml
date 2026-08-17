@@ -2,71 +2,158 @@ specialties:
   - title: Tortellini
     img: /contents/pixel/tortellini2x.png
     link: https://www.google.com/maps/place/Trattoria+Aldina/@44.6447691,10.9249297,15z/data=!4m2!3m1!1s0x0:0xe2c65becf7af57ff?sa=X&ved=2ahUKEwiDsYzhkMP6AhWpX_EDHaxDAVoQ_BJ6BAhqEAU
+    dish: tortellini
   - title: Gnocco fritto
     img: /contents/pixel/gnocco-fritto2x.png
     link: https://www.google.com/maps/place/Trattoria+Zanichelli/@44.497676,10.8737897,15z/data=!4m5!3m4!1s0x0:0x7bd1cce8710af19c!8m2!3d44.4976623!4d10.873818
+    dish: gnocco-fritto
   - title: Erbazzone
     img: /contents/pixel/erbazzone2x.png
     link: https://www.google.com/maps/place//data=!4m2!3m1!1s0x477fef143b9209d3:0x348fa458d0ddcf03?source=g.page.share
+    dish: erbazzone
   - title: Frittelle di Baccalà
     img: /contents/pixel/frittelle2x.png
     link: https://www.google.com/maps/place//data=!4m2!3m1!1s0x477fef09866f9b3f:0x51feb487c4323cc3?source=g.page.share
+    dish: frittelle-di-baccala
   - title: Borlenghi
     img: /contents/pixel/borlenghi2x.png
     link: null
+    dish: borlenghi
   - title: Il tris di primi
     img: /contents/pixel/primi2x.png
     link: https://www.google.com/maps/place/Agriturismo+Il+Pastore/@44.4092774,10.8990594,15z/data=!4m2!3m1!1s0x0:0xc50dcdafdbc8830d?sa=X&ved=2ahUKEwjru8ySkcP6AhVHSvEDHfSAC6oQ_BJ6BAh6EAU
-breakfast:
-  - name: 📍 Caffè Del Collegio
+    dish: tris-di-primi
+places:
+  - name: Caffè Del Collegio
     specialty: Gnocco Fritto col Crudo
-    notes: Il gnocco fritto al mattino è il classico dei classici
+    notes: Per il gnocco fritto a colazione, non a pranzo o cena
+    zone: In città
+    when: [colazione]
+    rating: 4
+    price: 3
     link: https://www.google.com/maps/place/Caff%C3%A8+del+Collegio/@44.6452864,10.9270283,15z/data=!4m2!3m1!1s0x0:0x46bc66df5b115ad3?sa=X&ved=2ahUKEwjS0NG-psP6AhV9SPEDHe-0B9MQ_BJ6BAhoEAU
-  - name: 📍 Forno San Giorgio AKA Dolce Charlotte
+    tags: [colazione, gnocco-fritto]
+  - name: Insolito Bar
+    specialty: Gnocco fritto e borlenghi
+    zone: In città
+    when: [pranzo, cena]
+    rating: 5
+    price: 5
+    link: https://www.google.com/maps?vet=10CAAQoqAOahcKEwigm5z6waeWAxUAAAAAHQAAAAAQCw..i&sca_esv=3cb11f4b13d19c80&pvq=Cg0vZy8xMWI4NzczM193IhIKDGluc29saXRvIGJhchACGAM&lqi=CgxpbnNvbGl0byBiYXJI-5_G86CqgIAIWh4QABABGAAYASIMaW5zb2xpdG8gYmFyKgYIAhAAEAGSAQpyZXN0YXVyYW50&fvr=1&cs=1&um=1&ie=UTF-8&fb=1&gl=it&sa=X&ftid=0x477fefa6f5f09441:0x7409ad2ed6663996
+    tags: [gnocco-fritto, borlenghi]
+  - name: La Ca' del porc
+    specialty: Borlenghi
+    zone: Fuori città
+    when: [pranzo, cena]
+    rating: 5
+    price: 4
+    link: https://www.google.com/maps/place/Albergo+Ristorante+La+Ca'+dal+Porc/@44.5559655,10.8780611,17z/data=!3m1!4b1!4m6!3m5!1s0x477fe4b5cb75b10f:0x28e90ed0e6957739!8m2!3d44.5559617!4d10.880636!16s%2Fg%2F1tplp4qx?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
+    tags: [borlenghi]
+  - name: Trattoria Zanichelli
+    specialty: Gnocco fritto e tris di primi
+    zone: Collina
+    when: [pranzo, cena]
+    rating: 4
+    price: 4
+    link: https://www.google.com/maps/place/Trattoria+Zanichelli/@44.4976798,10.8712148,731m/data=!3m2!1e3!4b1!4m6!3m5!1s0x477fe3a9fd6d594f:0x7bd1cce8710af19c!8m2!3d44.497676!4d10.8737897!16s%2Fg%2F1tjf9385?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
+    tags: [gnocco-fritto, tris-di-primi, fuori]
+  - name: Forno San Giorgio AKA Dolce Charlotte
     specialty: Erbazzone
     notes: Li vendono pure interi per 20€ da portare via come una torta
+    closed: true
     link: https://www.google.com/maps/place/Dolce+Charlotte/@44.6478264,10.9277621,15z/data=!4m2!3m1!1s0x0:0x348fa458d0ddcf03?sa=X&ved=2ahUKEwiv5diAp8P6AhWvW_EDHQr1B44Q_BJ6BAhnEAU
-  - name: 📍 Mercato Albinelli
-    specialty: Frittelle di baccalà non sembrano autoctone, eppure...
+    tags: [colazione, erbazzone]
+  - name: Mercato Albinelli
+    specialty: Frittelle di baccalà, stranamente tradizionali
     notes: Da visitare la mattina presto, è un mercato mica un ristorante
+    zone: In città
+    when: [colazione, pranzo, cena]
     link: https://www.google.com/maps/place/Mercato+Storico+Albinelli/@44.6448083,10.9255386,15z/data=!4m2!3m1!1s0x0:0x51feb487c4323cc3?sa=X&ved=2ahUKEwj3142Ip8P6AhVoSPEDHagNCWwQ_BJ6BAhjEAU
-lunch:
-  - name: 📍 Zémian
+    rating: 5
+    price: 4
+    tags: [colazione, frittelle-di-baccala]
+  - name: Al budgàtt
+    specialty: Frittelle di baccalà
+    link: https://www.google.com/maps/place/Tradizione+Modenese+da+Stefani+-+Gastronomia+con+Degustazione+e+Trattoria/@44.5512879,10.8931635,624m/data=!3m1!1e3!4m6!3m5!1s0x477fe38bcaf91df1:0xb920162c2970c22c!8m2!3d44.5512802!4d10.895299!16s%2Fg%2F1w97t7d3?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
+    rating: 5
+    price: 3
+    tags: [frittelle-di-baccala]
+  - name: Zémian
     specialty: Addirittura un menù fisso tipico di tutto rispetto, ormai una rarità
     notes: Prenota gabiàn, anche 2 4 5 giorni prima
+    zone: In città
+    when: [pranzo, cena]
     link: https://www.google.com/maps/place/Zemi%C3%A0n+piccola+osteria/@44.6483652,10.9278207,15z/data=!4m2!3m1!1s0x0:0xe52b2e5ab7a99466?sa=X&ved=2ahUKEwikwNb1p8P6AhVQR_EDHSJPCiwQ_BJ6BAhtEAU
-  - name: 📍 Trattoria Aldina
-    specialty: Lo stinco e tortellini sono tappa obbligata
+    tags: [pranzo]
+  - name: Trattoria Aldina
+    specialty: Lo stinco e i tortellini sono tappa obbligata
     notes: LUN - VEN A PRANZO non prende prenotazioni, VEN - SAB A CENA devi prenotare
+    zone: In città
+    when: [pranzo, cena]
     link: https://www.google.com/maps/place/Trattoria+Aldina/@44.6447691,10.9249297,15z/data=!4m5!3m4!1s0x0:0xe2c65becf7af57ff!8m2!3d44.6447318!4d10.9250179
-  - name: 📍 Ermes
+    tags: [pranzo, tortellini]
+  - name: Ermes
     specialty: T'è propria un Gabian
     notes: LUN - SAB SOLO PRANZO e non prende prenotazioni
+    zone: In città
+    when: [pranzo, cena]
     link: https://www.google.com/maps/place/Osteria+Ermes/@44.649487,10.9253776,15z/data=!4m2!3m1!1s0x0:0xa844c200b147ae78?sa=X&ved=2ahUKEwievOKKqMP6AhUZQfEDHVbEBw0Q_BJ6BAhoEAU
-stop:
-  - name: 📍 Salumeria con cucina
+    tags: [pranzo]
+  - name: Salumeria con cucina
     specialty: Scegli tra qualunque tipo di cibo
     notes: Occhio al vino!
+    zone: In città
+    when: [pranzo, cena]
     link: https://www.google.com/maps/place/Salumeria+con+cucina/@44.6473678,10.9226053,15z/data=!4m2!3m1!1s0x0:0x31a78bbf26ec3c4e?sa=X&ved=2ahUKEwitiOjoqMP6AhWLRfEDHQFKDlgQ_BJ6BAh3EAU
-  - name: 📍 pizzALTaglio
+    tags: [volo]
+  - name: pizzALTaglio
     specialty: null
     notes: Per la fame improvvisa
+    zone: In città
+    when: [pranzo, cena]
     link: https://www.google.com/maps/place/pizzALTaglio/@44.6464697,10.9271085,15z/data=!4m2!3m1!1s0x0:0x15ed5e9220b8ff03?sa=X&ved=2ahUKEwifh5L7qMP6AhXQXfEDHRvTDgUQ_BJ6BAhhEAU
-drink:
+    tags: [volo]
+  - name: Forno Alberghini
+    zone: In città
+    link: https://www.google.com/maps/place/Nuova+Panificio+Alberghini+Modena/@44.6376063,10.9300673,17z/data=!3m2!4b1!5s0x477fef43949e075b:0xaa6471cc81e6598e!4m6!3m5!1s0x477fef43927e905d:0xa81c7122a295456a!8m2!3d44.6376025!4d10.9326422!16s%2Fg%2F11h0z2xnm?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
+    tags: [volo]
+  - name: Forno Cristini
+    zone: In città
+    link: https://www.google.com/maps/search/Forno+cristini+/@44.6376249,10.9223425,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
+    tags: [volo]
   - name: La Bicicletta, €
     notes: 🍹🍺🍖🧀 Un buon Negroni, e all'occorrenza due pezzi di gnocco li fanno al volo
+    tags: [bere]
   - name: Salumeria Hosteria Giusti, €€
     notes: 🍹🍷🧀 Beh alla fine era una salumeria. Non sbaglia
+    tags: [bere]
   - name: Mr. Brown, €
     notes: 🍺🍟 E una porzione di patate country, grazie
+    tags: [bere]
   - name: La Vinoteca, €€
     notes: 🍷🧀
+    tags: [bere]
   - name: Slanzi Pub & Vinyl, €
     notes: 🍺 Birrette, tavolini a bordo strada fuori dalla confusione della Via Emilia
-outside:
+    tags: [bere]
+  - name: Cesare Modena
+    notes: 🍸 Cocktail bar
+    link: https://www.google.com/maps/place/Cesare+Modena+%E2%80%94+Cocktail+Bar/@44.6463713,10.9212879,18z/data=!3m1!4b1!4m6!3m5!1s0x477fefa9be2041fd:0x4d135cff4de0cbf7!8m2!3d44.6463696!4d10.9224672!16s%2Fg%2F11mbw9ndkk?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
+    tags: [bere]
   - name: Agriturismo dal Pastore
     specialty: I migliori primi della provincia. A mani basse
-    notes: 45/50 minuti da Modena, ma ne vale la pena
+    notes: 45/50 minuti da Modena, ma ne vale la pena, portare una felpa per la sera
+    zone: Collina
+    when: [pranzo, cena]
+    rating: 5
+    price: 5
+    link: https://www.google.com/maps/place/Agriturismo+Il+Pastore/@44.406632,10.8880615,14.34z/data=!4m6!3m5!1s0x132ab4048b3a4845:0xc50dcdafdbc8830d!8m2!3d44.4092774!4d10.8990594!16s%2Fg%2F1w3swymh?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
+    tags: [fuori, tris-di-primi]
+  - name: Le Casette
+    zone: Collina
+    when: [pranzo, cena]
+    link: https://www.google.com/maps/place/Agrituristica+Le+Casette/@44.5021302,10.9308583,17z/data=!4m10!3m9!1s0x477fe1add06ab783:0xe5fd82c0ce4d96a!5m3!1s2026-09-15!4m1!1i2!8m2!3d44.5021264!4d10.9334332!16s%2Fg%2F1tkjk120?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
+    tags: [fuori]
 visit:
   - title: Duomo di Modena
     img: /contents/pixel/duomo2x.png
@@ -81,12 +168,16 @@ festival:
   - title: Festival della Filosofia
     img: /contents/pixel/filosofia2x.png
     link: https://www.festivalfilosofia.it/programma-completo
+    date: 18-20 settembre
   - title: DIG Festival
     img: /contents/pixel/dig2x.png
     link: https://dig-awards.org/
+    date: 23-27 settembre
   - title: Smart Life Festival
     img: /contents/pixel/sml2x.png
     link: https://smartlifefestival.it/
-  - title: Modena play
-    img: /contents/pixel/play2x.png
-    link: https://www.play-modena.it/
+    date: 15-18 ottobre
+  - title: San Geminiano
+    img: null
+    link: null
+    date: 31 gennaio

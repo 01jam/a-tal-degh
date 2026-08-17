@@ -1,31 +1,40 @@
 .nav {
 	position: sticky;
 	bottom: 0;
-	padding: 1rem;
+	padding: var(--spacing-md);
 	display: flex;
 	flex-direction: column;
-	row-gap: 0.75rem;
-	transform: translateY(0%);
-	transition: transform 0.25s ease-out;
+	// Matches the column-gap between links within a row, below.
+	row-gap: var(--spacing-sm);
 	width: 100%;
 	box-sizing: border-box;
 
-	&--is-hidden {
-		transform: translateY(100%);
-	}
-
 	.row {
 		display: flex;
-		row-gap: 0.5em;
-		column-gap: 0.5em;
+		row-gap: var(--spacing-sm);
+		column-gap: var(--spacing-sm);
 		flex-wrap: wrap;
 
 		.link {
+			// <button> does not inherit the page's typography the way <a> does.
+			font: inherit;
+			border: 0;
+			cursor: pointer;
+
 			background: var(--white);
 			color: var(--black);
-			padding: 0.5em;
+			padding: 0 0.75em;
 			border-radius: 0.5em;
 			transition: transform 0.25s ease-out;
+
+			// The height used to fall out of each label's own line box, so the
+			// emoji's fallback font decided it and buttons on separate rows came
+			// out different heights. A fixed min-height with the label centred
+			// inside takes glyph metrics out of it.
+			display: flex;
+			align-items: center;
+			min-height: 2.25em;
+			line-height: 1;
 
 			@media (hover: hover) {
 				&:hover {

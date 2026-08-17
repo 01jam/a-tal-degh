@@ -7,6 +7,8 @@ interface ContentRecord {
 	notes?: string | null;
 	link?: string | null;
 	img?: string | null;
+	dish?: string | null;
+	tags?: string[] | null;
 }
 
 /** The parsed `api/content.yml`: section name -> records. */

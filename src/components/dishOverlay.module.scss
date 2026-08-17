@@ -1,0 +1,115 @@
+.overlay {
+	position: fixed;
+	inset: 0;
+	display: flex;
+	justify-content: flex-end;
+	// The modal below floats with a margin instead of sitting flush against the
+	// viewport, so it reads as a card and not a drawer — this keeps it clear of
+	// the edges on short viewports where the margin alone wouldn't be enough.
+	padding: var(--spacing-md);
+	box-sizing: border-box;
+	background-color: rgb(0 0 0 / 60%);
+	z-index: 100;
+
+	&[data-entering] {
+		animation: fade 200ms ease-out;
+	}
+
+	// `forwards` is what stops the flash: without it the element snaps back to
+	// its base opacity the instant the animation ends, and RAC keeps it mounted
+	// until the modal's own exit finishes. The two exits are the same length
+	// for the same reason.
+	&[data-exiting] {
+		animation: fade 200ms ease-in reverse forwards;
+	}
+}
+
+@keyframes fade {
+	from {
+		opacity: 0;
+	}
+}
+
+.modal {
+	// Same accents the card grid's alternating table rows and links use, so a
+	// table looks the same whether it's in the page or in this card.
+	--row-alt: var(--gray-dark);
+	--link-underline: var(--black);
+
+	width: 100%;
+	max-width: 1024px;
+	max-height: 100%;
+	overflow-y: auto;
+	background-color: var(--gray);
+	color: var(--black);
+	// Matches the card grid's corner radius (src/app.module.scss).
+	border-radius: 0.5rem;
+	box-shadow: 0 20px 60px rgb(0 0 0 / 35%);
+	outline: none;
+	box-sizing: border-box;
+
+	&[data-entering] {
+		animation: slide-in 250ms cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	&[data-exiting] {
+		animation: slide-in 200ms ease-in reverse forwards;
+	}
+}
+
+@keyframes slide-in {
+	from {
+		transform: translateX(100%);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.overlay,
+	.modal {
+		animation: none !important;
+	}
+}
+
+.dialog {
+	padding: var(--spacing-md);
+	outline: none;
+}
+
+.header {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	column-gap: var(--spacing-md);
+	margin-bottom: var(--spacing-md);
+}
+
+.heading {
+	font-size: var(--font-size-3xl);
+	font-weight: 400;
+	margin: 0;
+}
+
+.close {
+	// Reset the native button chrome: this sits on top of an otherwise
+	// unstyled RAC Button.
+	appearance: none;
+	border: none;
+	background: none;
+	color: inherit;
+	font: inherit;
+	font-size: var(--font-size-lg);
+	line-height: 1;
+	cursor: pointer;
+	padding: var(--spacing-xs) var(--spacing-sm);
+	border-radius: 999px;
+	flex-shrink: 0;
+
+	&[data-hovered],
+	&[data-focus-visible] {
+		background-color: rgb(0 0 0 / 10%);
+	}
+}
+
+.empty {
+	opacity: 0.8;
+}
