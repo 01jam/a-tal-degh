@@ -60,6 +60,8 @@ places:
   - name: Forno San Giorgio AKA Dolce Charlotte
     specialty: Erbazzone
     notes: Li vendono pure interi per 20€ da portare via come una torta
+    zone: In città
+    when: [tutto il giorno]
     closed: true
     link: https://www.google.com/maps/place/Dolce+Charlotte/@44.6478264,10.9277621,15z/data=!4m2!3m1!1s0x0:0x348fa458d0ddcf03?sa=X&ved=2ahUKEwiv5diAp8P6AhWvW_EDHQr1B44Q_BJ6BAhnEAU
     tags: [colazione, erbazzone]
@@ -125,23 +127,46 @@ places:
     when: [tutto il giorno]
     link: https://www.google.com/maps/search/Forno+cristini+/@44.6376249,10.9223425,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
     tags: [volo, erbazzone]
-  - name: La Bicicletta, €
+  - name: La Bicicletta
     notes: 🍹🍺🍖🧀 Un buon Negroni, e all'occorrenza due pezzi di gnocco li fanno al volo
+    zone: In città
+    when: [sera]
+    rating: 5
+    price: 4
+    link: https://www.google.com/maps/place/La+Bicicletta+-+Caff%C3%A8+%26+Salumi/@44.6468612,10.9218196,17z/data=!3m1!4b1!4m6!3m5!1s0x477fef139db3d7f5:0x83a3e2022c99cbcb!8m2!3d44.6468574!4d10.9243945!16s%2Fg%2F1thx2x00?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
     tags: [bere]
-  - name: Salumeria Hosteria Giusti, €€
+  - name: Salumeria Hosteria Giusti
     notes: 🍹🍷🧀 Beh alla fine era una salumeria. Non sbaglia
+    zone: In città
+    when: [mattina, sera]
+    link: https://www.google.com/maps/place/Salumeria+Giusti/@44.6472254,10.9275294,19z/data=!3m1!4b1!4m6!3m5!1s0x477fef144a6d5dbf:0x64fac6a6d624acd8!8m2!3d44.6472244!4d10.9281731!16s%2Fg%2F1tf_rqrf?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
     tags: [bere]
-  - name: Mr. Brown, €
-    notes: 🍺🍟 E una porzione di patate country, grazie
+  - name: Mr. Brown
+    notes: 🍺🍟 È un pub dei più classici
+    zone: In città
+    when: [sera]
+    rating: 4
+    price: 3
+    link: https://www.google.com/maps/place/Mr.+Brown/@44.6434507,10.9263312,17z/data=!3m1!4b1!4m6!3m5!1s0x477fef6ab1383eed:0xd3762b252cae5893!8m2!3d44.6434469!4d10.9289061!16s%2Fg%2F1th7x5zk?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
     tags: [bere]
-  - name: La Vinoteca, €€
-    notes: 🍷🧀
+  - name: La Vinoteca
+    notes: 🍷🧀 Anche qui tra un vino e l'altro due affettati e del gnocco fritto lo hanno. La selezione di vini è importante spendendo normale
+    zone: In città
+    when: [pranzo, sera]
+    link: https://www.google.com/maps/place/Vinoteca+Modena/@44.6482235,10.9367704,18z/data=!3m2!4b1!5s0x477fef3bf81b1b61:0xd41f99c766dc942!4m6!3m5!1s0x477fef3bf9eb793d:0x8112cc7b4534ae9c!8m2!3d44.648222!4d10.937795!16s%2Fg%2F1ptwhlpdm?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
     tags: [bere]
-  - name: Slanzi Pub & Vinyl, €
-    notes: 🍺 Birrette, tavolini a bordo strada fuori dalla confusione della Via Emilia
+  - name: Slanzi Pub & Vinyl
+    notes: 🍺 È la definizione di "usciamo a bere birrette". Tavolini a bordo strada fuori dalla confusione della Via Emilia
+    zone: In città
+    when: [sera]
+    link: https://www.google.com/maps/place/Slanzi+Pub+%26+Vinyl/@44.6470667,10.9203858,17z/data=!3m1!4b1!4m6!3m5!1s0x477fef13ac056731:0x17009961cd4021ed!8m2!3d44.6470629!4d10.9229607!16s%2Fg%2F11dyxdvw0c?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
     tags: [bere]
   - name: Cesare Modena
-    notes: 🍸 Cocktail bar
+    notes: 🍸 Cocktail bar. È un po' fancy e sicuramente il più costoso del gruppo (comunque meno di un posto in centro a Milano). Direi per bere con moderazione ma di buona qualità
+    zone: In città
+    when: [sera]
+    rating: 4
+    price: 3
     link: https://www.google.com/maps/place/Cesare+Modena+%E2%80%94+Cocktail+Bar/@44.6463713,10.9212879,18z/data=!3m1!4b1!4m6!3m5!1s0x477fefa9be2041fd:0x4d135cff4de0cbf7!8m2!3d44.6463696!4d10.9224672!16s%2Fg%2F11mbw9ndkk?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
     tags: [bere]
   - name: Agriturismo dal Pastore
@@ -154,10 +179,11 @@ places:
     link: https://www.google.com/maps/place/Agriturismo+Il+Pastore/@44.406632,10.8880615,14.34z/data=!4m6!3m5!1s0x132ab4048b3a4845:0xc50dcdafdbc8830d!8m2!3d44.4092774!4d10.8990594!16s%2Fg%2F1w3swymh?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
     tags: [fuori, tris-di-primi]
   - name: Le Casette
+    notes: Qui la sera è a prezzo fisso, 30 euro con tris di primi, salumi illimitati, gnocco fritto e tigelle, a volte la grigliata a volte gli umidi, vino quanto vuoi, amari, caffè e i dolci standard
     zone: Collina
     when: [pranzo, cena]
     link: https://www.google.com/maps/place/Agrituristica+Le+Casette/@44.5021302,10.9308583,17z/data=!4m10!3m9!1s0x477fe1add06ab783:0xe5fd82c0ce4d96a!5m3!1s2026-09-15!4m1!1i2!8m2!3d44.5021264!4d10.9334332!16s%2Fg%2F1tkjk120?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
-    tags: [fuori]
+    tags: [gnocco-fritto, tris-di-primi, fuori]
 visit:
   - title: Duomo di Modena
     img: /contents/pixel/duomo2x.png
