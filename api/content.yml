@@ -124,7 +124,7 @@ places:
     zone: In città
     when: [tutto il giorno]
     link: https://www.google.com/maps/search/Forno+cristini+/@44.6376249,10.9223425,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
-    tags: [volo]
+    tags: [volo, erbazzone]
   - name: La Bicicletta, €
     notes: 🍹🍺🍖🧀 Un buon Negroni, e all'occorrenza due pezzi di gnocco li fanno al volo
     tags: [bere]
