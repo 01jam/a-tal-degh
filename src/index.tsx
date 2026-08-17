@@ -1,19 +1,31 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
+import { SWRConfig } from "swr";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
 import "./index.scss";
 
-const root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+declare global {
+	interface Window {
+		__SWR_FALLBACK__?: Record<string, unknown>;
+	}
+}
+
+// Injected by prerender.js. Absent when running the dev server, which serves
+// the untouched template.
+const fallback = window.__SWR_FALLBACK__;
+
+const container = document.getElementById("root") as HTMLElement;
+
+const app = (
+	<React.StrictMode>
+		<SWRConfig value={{ fallback: fallback ?? {} }}>
+			<App />
+		</SWRConfig>
+	</React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+if (fallback) {
+	hydrateRoot(container, app);
+} else {
+	createRoot(container).render(app);
+}

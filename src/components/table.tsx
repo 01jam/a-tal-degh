@@ -1,32 +1,46 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
+import {
+	Cell,
+	Column,
+	Row,
+	Table as AriaTable,
+	TableBody,
+	TableHeader,
+} from "react-aria-components";
 import styles from "./table.module.scss";
 
-const Table: FC<{
-  head?: (JSX.Element | null)[];
-  body: (JSX.Element | null)[][];
-}> = ({ head, body }) => {
-  return (
-    <table className={styles.container}>
-      {head && (
-        <thead>
-          <tr>
-            {head.map((column, index) => (
-              <th key={index}>{column}</th>
-            ))}
-          </tr>
-        </thead>
-      )}
-      <tbody>
-        {body.map((row, index) => (
-          <tr key={index}>
-            {row.map((column, index) => (
-              <td key={index}>{column}</td>
-            ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  );
-};
+interface DefaultProps {
+	/** Accessible name for the table. Without it the table is unlabelled. */
+	label: string;
+	columns: string[];
+	rows: ReactNode[][];
+}
+
+const Table: FC<DefaultProps> = ({ label, columns, rows }) => (
+	<AriaTable aria-label={label} className={styles.container}>
+		<TableHeader>
+			{columns.map((column, index) => (
+				// The first column names its row, which is what lets a screen
+				// reader say which record a cell belongs to.
+				<Column key={column} id={column} isRowHeader={index === 0}>
+					<h4>
+						<strong>
+							<mark>{column}</mark>
+						</strong>
+					</h4>
+				</Column>
+			))}
+		</TableHeader>
+		<TableBody>
+			{rows.map((row, rowIndex) => (
+				<Row key={rowIndex} id={rowIndex}>
+					{row.map((cell, cellIndex) => (
+						<Cell key={cellIndex}>{cell}</Cell>
+					))}
+				</Row>
+			))}
+		</TableBody>
+	</AriaTable>
+);
 
 export { Table };

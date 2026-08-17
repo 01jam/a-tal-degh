@@ -1,79 +1,60 @@
-import { Fragment, useEffect } from "react";
+import { Fragment, FC } from "react";
 import { Block } from "./components/block";
 import { Section } from "./components/section";
 import { Table } from "./components/table";
 import styles from "./app.module.scss";
 import useSWR from "swr";
-import axios from "axios";
 import { typo } from "./styles";
 import { ConditionalIf } from "./components/conditionalIf";
 import { Navigation } from "./components/navigation";
-import { Footer } from "./components/footer";
+import { CONTENT_KEY, Content, contentUrl, fetchContent, Record } from "./api";
+
+/** One request feeds every section. */
+const useContent = (): Content =>
+	useSWR<Content>(CONTENT_KEY, fetchContent).data ?? {};
+
+/** Name / specialty / notes rows, shared by every table section. */
+const rows = (records: Record[], withSpecialty = true) =>
+	records.map((record) =>
+		[
+			<ConditionalIf target='_blank' href={record.link ?? undefined}>
+				{record.name}
+			</ConditionalIf>,
+			withSpecialty ? <Fragment>{record.specialty}</Fragment> : null,
+			<Fragment>{record.notes}</Fragment>,
+		].filter((cell) => cell !== null)
+	);
+
+/** Captioned image grid, used by specialties, visit and festival. */
+const Grid: FC<{ records: Record[] }> = ({ records }) => (
+	<div className={styles.grid}>
+		{records.map((record, index) => (
+			<ConditionalIf
+				key={index}
+				href={record.link ?? undefined}
+				target='_blank'
+				className={styles.block}>
+				<div className={styles.caption}>
+					<p>{record.title}</p>
+					<p>📍</p>
+				</div>
+				<img src={contentUrl(record.img ?? "")} alt={record.title ?? ""} />
+			</ConditionalIf>
+		))}
+	</div>
+);
 
 function App() {
-	const { data: specialties } = useSWR("specialties", (resource: string) =>
-		axios
-			.get<any[]>(
-				`https://raw.githubusercontent.com/01jam/a-tal-degh/main/api/${resource}.json`
-			)
-			.then(({ data }) => data)
-	);
-
-	const { data: breakfast } = useSWR("breakfast", (resource: string) =>
-		axios
-			.get<any[]>(
-				`https://raw.githubusercontent.com/01jam/a-tal-degh/main/api/${resource}.json`
-			)
-			.then(({ data }) => data)
-	);
-
-	const { data: lunch } = useSWR("lunch", (resource: string) =>
-		axios
-			.get<any[]>(
-				`https://raw.githubusercontent.com/01jam/a-tal-degh/main/api/${resource}.json`
-			)
-			.then(({ data }) => data)
-	);
-
-	const { data: stop } = useSWR("stop", (resource: string) =>
-		axios
-			.get<any[]>(
-				`https://raw.githubusercontent.com/01jam/a-tal-degh/main/api/${resource}.json`
-			)
-			.then(({ data }) => data)
-	);
-
-	const { data: drink } = useSWR("drink", (resource: string) =>
-		axios
-			.get<any[]>(
-				`https://raw.githubusercontent.com/01jam/a-tal-degh/main/api/${resource}.json`
-			)
-			.then(({ data }) => data)
-	);
-
-	const { data: outside } = useSWR("outside", (resource: string) =>
-		axios
-			.get<any[]>(
-				`https://raw.githubusercontent.com/01jam/a-tal-degh/main/api/${resource}.json`
-			)
-			.then(({ data }) => data)
-	);
-
-	const { data: visit } = useSWR("visit", (resource: string) =>
-		axios
-			.get<any[]>(
-				`https://raw.githubusercontent.com/01jam/a-tal-degh/main/api/${resource}.json`
-			)
-			.then(({ data }) => data)
-	);
-
-	const { data: festival } = useSWR("festival", (resource: string) =>
-		axios
-			.get<any[]>(
-				`https://raw.githubusercontent.com/01jam/a-tal-degh/main/api/${resource}.json`
-			)
-			.then(({ data }) => data)
-	);
+	const {
+		specialties,
+		breakfast,
+		lunch,
+		stop,
+		drink,
+		outside,
+		visit,
+		festival,
+	} = useContent();
 
 	return (
 		<main className='App'>
@@ -102,23 +83,7 @@ function App() {
 							altrove...
 						</p>
 
-						<div className={styles.grid}>
-							{specialties.map((record: any, index: number) => (
-								<ConditionalIf
-									key={index}
-									href={record.link}
-									target='_blank'
-									className={styles.block}>
-									<div className={styles.caption}>
-										<p>{record.title}</p>
-										<p>📍</p>
-									</div>
-									<img
-										src={`${process.env.REACT_APP_GITHUB_RAWCONTENT}${record.img}`}
-									/>
-								</ConditionalIf>
-							))}
-						</div>
+						<Grid records={specialties} />
 					</Block>
 				</Section>
 			)}
@@ -133,32 +98,9 @@ function App() {
 						</p>
 					</Block>
 					<Table
-						head={[
-							<h4>
-								<strong>
-									<mark>Nome</mark>
-								</strong>
-							</h4>,
-							<h4>
-								<strong>
-									<mark>Specialità</mark>
-								</strong>
-							</h4>,
-							<h4>
-								<strong>
-									<mark>Note</mark>
-								</strong>
-							</h4>,
-						]}
-						body={
-							breakfast?.map((record) => [
-								<ConditionalIf target='_blank' href={record.link}>
-									{record.name}
-								</ConditionalIf>,
-								<Fragment>{record.specialty}</Fragment>,
-								<Fragment>{record.notes}</Fragment>,
-							]) || []
-						}
+						label="Appena svegli"
+						columns={["Nome", "Specialità", "Note"]}
+						rows={rows(breakfast)}
 					/>
 				</Section>
 			)}
@@ -173,32 +115,9 @@ function App() {
 						</p>
 					</Block>
 					<Table
-						head={[
-							<h4>
-								<strong>
-									<mark>Nome</mark>
-								</strong>
-							</h4>,
-							<h4>
-								<strong>
-									<mark>Specialità</mark>
-								</strong>
-							</h4>,
-							<h4>
-								<strong>
-									<mark>Note</mark>
-								</strong>
-							</h4>,
-						]}
-						body={
-							lunch?.map((record) => [
-								<ConditionalIf target='_blank' href={record.link}>
-									{record.name}
-								</ConditionalIf>,
-								<Fragment>{record.specialty}</Fragment>,
-								<Fragment>{record.notes}</Fragment>,
-							]) || []
-						}
+						label="Trattorie"
+						columns={["Nome", "Specialità", "Note"]}
+						rows={rows(lunch)}
 					/>
 				</Section>
 			)}
@@ -209,32 +128,9 @@ function App() {
 						<h2>Pranzo al volo</h2>
 					</Block>
 					<Table
-						head={[
-							<h4>
-								<strong>
-									<mark>Nome</mark>
-								</strong>
-							</h4>,
-							<h4>
-								<strong>
-									<mark>Specialità</mark>
-								</strong>
-							</h4>,
-							<h4>
-								<strong>
-									<mark>Note</mark>
-								</strong>
-							</h4>,
-						]}
-						body={
-							stop?.map((record) => [
-								<ConditionalIf target='_blank' href={record.link}>
-									{record.name}
-								</ConditionalIf>,
-								<Fragment>{record.specialty}</Fragment>,
-								<Fragment>{record.notes}</Fragment>,
-							]) || []
-						}
+						label="Pranzo al volo"
+						columns={["Nome", "Specialità", "Note"]}
+						rows={rows(stop)}
 					/>
 				</Section>
 			)}
@@ -245,26 +141,9 @@ function App() {
 						<h2>Bere</h2>
 					</Block>
 					<Table
-						head={[
-							<h4>
-								<strong>
-									<mark>Nome</mark>
-								</strong>
-							</h4>,
-							<h4>
-								<strong>
-									<mark>Note</mark>
-								</strong>
-							</h4>,
-						]}
-						body={
-							drink?.map((record) => [
-								<ConditionalIf target='_blank' href={record.link}>
-									{record.name}
-								</ConditionalIf>,
-								<Fragment>{record.notes}</Fragment>,
-							]) || []
-						}
+						label="Bere"
+						columns={["Nome", "Note"]}
+						rows={rows(drink, false)}
 					/>
 				</Section>
 			)}
@@ -275,32 +154,9 @@ function App() {
 						<h2>Cena al fresco</h2>
 					</Block>
 					<Table
-						head={[
-							<h4>
-								<strong>
-									<mark>Nome</mark>
-								</strong>
-							</h4>,
-							<h4>
-								<strong>
-									<mark>Specialità</mark>
-								</strong>
-							</h4>,
-							<h4>
-								<strong>
-									<mark>Note</mark>
-								</strong>
-							</h4>,
-						]}
-						body={
-							outside?.map((record) => [
-								<ConditionalIf target='_blank' href={record.link}>
-									{record.name}
-								</ConditionalIf>,
-								<Fragment>{record.specialty}</Fragment>,
-								<Fragment>{record.notes}</Fragment>,
-							]) || []
-						}
+						label="Cena al fresco"
+						columns={["Nome", "Specialità", "Note"]}
+						rows={rows(outside)}
 					/>
 				</Section>
 			)}
@@ -312,23 +168,7 @@ function App() {
 
 						<p className={typo.medium}>Cosa vedere se si è di passaggio</p>
 
-						<div className={styles.grid}>
-							{visit.map((record: any, index: number) => (
-								<ConditionalIf
-									key={index}
-									href={record.link}
-									target='_blank'
-									className={styles.block}>
-									<div className={styles.caption}>
-										<p>{record.title}</p>
-										<p>📍</p>
-									</div>
-									<img
-										src={`${process.env.REACT_APP_GITHUB_RAWCONTENT}${record.img}`}
-									/>
-								</ConditionalIf>
-							))}
-						</div>
+						<Grid records={visit} />
 					</Block>
 				</Section>
 			)}
@@ -342,30 +182,13 @@ function App() {
 							Non è Milano, ma un paio di festival ci sono
 						</p>
 
-						<div className={styles.grid}>
-							{festival.map((record: any, index: number) => (
-								<ConditionalIf
-									key={index}
-									href={record.link}
-									target='_blank'
-									className={styles.block}>
-									<div className={styles.caption}>
-										<p>{record.title}</p>
-										<p>📍</p>
-									</div>
-									<img
-										src={`${process.env.REACT_APP_GITHUB_RAWCONTENT}${record.img}`}
-									/>
-								</ConditionalIf>
-							))}
-						</div>
+						<Grid records={festival} />
 					</Block>
 				</Section>
 			)}
 
 			<Navigation />
 
-			<Footer />
 		</main>
 	);
 }

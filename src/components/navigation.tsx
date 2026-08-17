@@ -1,22 +1,35 @@
-import { useInView } from "framer";
-import { FC, useEffect, useRef, useState } from "react";
+import { useInView } from "motion/react";
+import { FC, FocusEvent, useEffect, useRef, useState } from "react";
+import { Link } from "react-aria-components";
 import { css } from "../utils/css";
 import styles from "./navigation.module.scss";
 
+const SECTIONS = [
+	{ id: "specialties", label: "Specialties 👑" },
+	{ id: "breakfast", label: "Appena svegli ☕️" },
+	{ id: "lunch", label: "Trattorie 🍖" },
+	{ id: "stop", label: "Pranzo al volo 🏎" },
+	{ id: "drink", label: "Bere e aperitivi 🍹" },
+	{ id: "outside", label: "Cena fuori città 🎒" },
+	{ id: "visit", label: "Cosa vedere 👀" },
+	{ id: "festival", label: "Festival 🎤" },
+];
+
 const Navigation: FC = () => {
 	const [scrollDir, setScrollDir] = useState<number>();
-	const [height, setHeight] = useState<number>();
+	const [, setHeight] = useState<number>();
+	const [hasFocus, setHasFocus] = useState(false);
 
 	const navRef = useRef<HTMLElement>(null);
 	const elRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		const threshold = 50;
-		let lastScrollY = window.pageYOffset;
+		let lastScrollY = window.scrollY;
 		let ticking = false;
 
 		const updateScrollDir = () => {
-			const scrollY = window.pageYOffset;
+			const scrollY = window.scrollY;
 
 			if (Math.abs(scrollY - lastScrollY) < threshold) {
 				ticking = false;
@@ -57,48 +70,40 @@ const Navigation: FC = () => {
 
 	const isInView = useInView(elRef, { amount: 0 });
 
+	// Sliding the nav away while it holds keyboard focus would move the focused
+	// link off screen with no way to see where the focus went.
+	const isHidden = !isInView && !hasFocus && !!scrollDir && scrollDir > 0;
+
+	const onBlur = (event: FocusEvent<HTMLElement>) => {
+		if (!event.currentTarget.contains(event.relatedTarget)) setHasFocus(false);
+	};
+
 	return (
 		<>
 			<nav
 				ref={navRef}
+				onFocus={() => setHasFocus(true)}
+				onBlur={onBlur}
 				className={css(
 					styles.nav,
-					styles[
-						!isInView && scrollDir && scrollDir > 0
-							? "nav--is-hidden"
-							: "nav--not-hidden"
-					]
+					styles[isHidden ? "nav--is-hidden" : "nav--not-hidden"]
 				)}>
 				<div className={styles.row}>
-					<a href={"#specialties"} className={styles.link}>
-						Specialties 👑
-					</a>
-					<a href={"#breakfast"} className={styles.link}>
-						Appena svegli ☕️
-					</a>
-					<a href={"#lunch"} className={styles.link}>
-						Trattorie 🍖
-					</a>
-					<a href={"#stop"} className={styles.link}>
-						Pranzo al volo 🏎
-					</a>
-					<a href={"#drink"} className={styles.link}>
-						Bere e aperitivi 🍹
-					</a>
-					<a href={"#outside"} className={styles.link}>
-						Cena fuori città 🎒
-					</a>
+					{SECTIONS.slice(0, 6).map(({ id, label }) => (
+						<Link key={id} href={`#${id}`} className={styles.link}>
+							{label}
+						</Link>
+					))}
 				</div>
 				<div className={styles.row}>
-					<a href={"#visit"} className={styles.link}>
-						Cosa vedere 👀
-					</a>
-					<a href={"#festival"} className={styles.link}>
-						Festival 🎤
-					</a>
+					{SECTIONS.slice(6).map(({ id, label }) => (
+						<Link key={id} href={`#${id}`} className={styles.link}>
+							{label}
+						</Link>
+					))}
 				</div>
 			</nav>
-			<div ref={elRef} style={{}} />
+			<div ref={elRef} />
 		</>
 	);
 };
