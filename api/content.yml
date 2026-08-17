@@ -87,14 +87,14 @@ places:
     tags: [pranzo]
   - name: Trattoria Aldina
     specialty: Lo stinco e i tortellini sono tappa obbligata
-    notes: LUN - VEN A PRANZO non prende prenotazioni, VEN - SAB A CENA devi prenotare
+    notes: LUN - VEN A PRANZO non prende prenotazioni
     zone: In città
-    when: [pranzo, cena]
+    when: [pranzo]
     link: https://www.google.com/maps/place/Trattoria+Aldina/@44.6447691,10.9249297,15z/data=!4m5!3m4!1s0x0:0xe2c65becf7af57ff!8m2!3d44.6447318!4d10.9250179
     tags: [pranzo, tortellini]
   - name: Ermes
     specialty: T'è propria un Gabian
-    notes: LUN - SAB SOLO PRANZO e non prende prenotazioni
+    notes: Ora fa anche cena e accetta prenotazioni — dovrebbe esserci ancora la Bruna in cucina ma dal cambio gestione non ci sono ancora andato
     zone: In città
     when: [pranzo, cena]
     link: https://www.google.com/maps/place/Osteria+Ermes/@44.649487,10.9253776,15z/data=!4m2!3m1!1s0x0:0xa844c200b147ae78?sa=X&ved=2ahUKEwievOKKqMP6AhUZQfEDHVbEBw0Q_BJ6BAhoEAU
@@ -114,11 +114,15 @@ places:
     link: https://www.google.com/maps/place/pizzALTaglio/@44.6464697,10.9271085,15z/data=!4m2!3m1!1s0x0:0x15ed5e9220b8ff03?sa=X&ved=2ahUKEwifh5L7qMP6AhXQXfEDHRvTDgUQ_BJ6BAhhEAU
     tags: [volo]
   - name: Forno Alberghini
+    notes: Non ricordo se qui avevano il gnocco ingrassato
     zone: In città
+    when: [tutto il giorno]
     link: https://www.google.com/maps/place/Nuova+Panificio+Alberghini+Modena/@44.6376063,10.9300673,17z/data=!3m2!4b1!5s0x477fef43949e075b:0xaa6471cc81e6598e!4m6!3m5!1s0x477fef43927e905d:0xa81c7122a295456a!8m2!3d44.6376025!4d10.9326422!16s%2Fg%2F11h0z2xnm?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
     tags: [volo]
   - name: Forno Cristini
+    notes: La stria bassa non è male (molto poco unta ma morbida), così come l'erbazzone — anche se non ha nulla a che spartire con quello del compianto Forno San Giorgio
     zone: In città
+    when: [tutto il giorno]
     link: https://www.google.com/maps/search/Forno+cristini+/@44.6376249,10.9223425,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDgxMi4wIKXMDSoASAFQAw%3D%3D
     tags: [volo]
   - name: La Bicicletta, €

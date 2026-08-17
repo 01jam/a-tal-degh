@@ -6,7 +6,16 @@
     display: none;
   }
 
-  // Six columns do not fit a phone: the table overflowed and took the whole
+  // Notes is the last column of every table and the only free-text one, so the
+  // auto layout hands it whatever width is left over and the lines get too long
+  // to track. Capping the inner block caps the column: under `table-layout:
+  // auto` a max-width on the cell itself is only a hint.
+  td:last-child .value {
+    display: inline-block;
+    max-width: 500px;
+  }
+
+  // Five columns do not fit a phone: the table overflowed and took the whole
   // page's horizontal scroll with it. Under the breakpoint every row becomes
   // a card instead, name on top and one labelled line per field.
   @media only screen and (max-width: 599px) {

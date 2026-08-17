@@ -10,9 +10,6 @@ import { Record } from "./api";
 const hasZone = (records: Record[]) => records.some((record) => !!record.zone);
 const hasWhen = (records: Record[]) =>
 	records.some((record) => !!record.when?.length);
-const hasRating = (records: Record[]) =>
-	records.some((record) => typeof record.rating === "number");
-
 /**
  * Column headers matching what `rows` emits for the same arguments. Deriving
  * both from the same two inputs is what keeps headers and cells lined up.
@@ -23,7 +20,6 @@ const columns = (records: Record[], withSpecialty = true) =>
 		withSpecialty ? "Specialità" : null,
 		hasZone(records) ? "Zona" : null,
 		hasWhen(records) ? "Quando" : null,
-		hasRating(records) ? "Voto" : null,
 		"Note",
 	].filter((column) => column !== null);
 
@@ -56,10 +52,10 @@ const name = (record: Record) =>
 	);
 
 /**
- * Name / specialty / zone / when / rating / notes cells, shared by every table
- * of places — the fixed page sections and the dish overlay both render through
- * this. `price` is deliberately not a column: it is data the record carries
- * but the tables stay to the overall score.
+ * Name / specialty / zone / when / notes cells, shared by every table of places
+ * — the fixed page sections and the dish overlay both render through this.
+ * `rating` and `price` are deliberately not columns: they are data the record
+ * carries, and they order the rows, but the tables do not show the numbers.
  */
 const rows = (records: Record[], withSpecialty = true) =>
 	byRating(records).map((record) =>
@@ -70,7 +66,6 @@ const rows = (records: Record[], withSpecialty = true) =>
 			hasWhen(records) ? (
 				<Fragment>{record.when?.join(", ")}</Fragment>
 			) : null,
-			hasRating(records) ? <Fragment>{record.rating}</Fragment> : null,
 			<Fragment>{record.notes}</Fragment>,
 		].filter((cell) => cell !== null)
 	);
